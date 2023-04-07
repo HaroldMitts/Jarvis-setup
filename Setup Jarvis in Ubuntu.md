@@ -4,6 +4,7 @@ Last Updated: April 7, 2023
 This not a script, just a commented version of the history of my terminal in Ubuntu 22. Use at your own risk. 
 Read the comments before running any commands.
 Check with Bing or GPT if you are unsure or unfamiliar with anything. 
+If you have suggestions for improvements, please let me know by creating an Issue.
 
 ## The following section is only needed if you need to expand your disk partition. 
 

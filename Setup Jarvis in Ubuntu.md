@@ -129,3 +129,6 @@ Be sure to enclose your keys on double-quotes - not mentioned in official docume
   
 `python awesome_chat.py --config config.yaml --mode server`
 
+### run Jarvis web
+
+`npm run dev` #this opens the browser and magics will happen if you have setup everything right.

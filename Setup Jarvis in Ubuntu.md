@@ -121,7 +121,7 @@ recreate the environment on another machine using the `conda create --name <env>
 
 ### Configure the config.yaml and lite.yaml 
   
-  Be sure to enclose your keys on double-quotes - not mentioned in official documentation
+Be sure to enclose your keys on double-quotes - not mentioned in official documentation
 
 ### run Jarvis
 

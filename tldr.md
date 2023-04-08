@@ -1,7 +1,9 @@
 more to come...
 
-* Check out my Youtube channel for videos on artificial intelligence https://www.youtube.com/@haroldmitts 
+* Check out my Youtube channel at https://www.youtube.com/@haroldmitts 
 
-* Connect with me on LinkedIn www.linkedin.com/in/hmitts
+* Connect with me on LinkedIn at https://www.linkedin.com/in/hmitts 
 
-* Follow me on Instagram @halucious
+* Follow me on Instagram at https://www.instagram.com/halucious
+
+* My blog at https://haroldmitts.com

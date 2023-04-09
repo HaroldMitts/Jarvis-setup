@@ -94,14 +94,15 @@ https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 `conda create -n flask_env -c conda-forge flask waitress flask-cors tiktoken`
 
-
 ### This code sets up the environment variables required to use Node Version Manager (NVM), a tool used to manage different versions of Node.js on a single machine.
 
 Overall, this code sets up the environment required to use NVM, which is used to manage different versions of Node.js on the same machine. By running this code in your shell environment, you can then use the nvm command to install and switch between different versions of Node.js as needed.
 
-Note: this is actually 2 commands, so you can run as 2 separate commmands if needed.
+Note: This command will append the export and source commands to the end of your ~/.bashrc file, which is a file that contains commands that are executed whenever a new bash session is started. This way, nvm will be loaded automatically whenever you open a new terminal or run bash.
 
-`export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"`
+`echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc`
+
+
 
 `nvm --version`
 

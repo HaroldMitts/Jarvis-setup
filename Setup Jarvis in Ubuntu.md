@@ -10,17 +10,9 @@ If you have suggestions for improvements, please let me know by creating an Issu
 
 Usually needed only in a Hyper-v quick create scenario.
 
-`lsblk`		This command lists all the available block devices on the system, including hard drives, USB drives, and optical drives.
-
-`lsblk -f`	will display additional information about the file system, including the file system type, label, and UUID for each device.
-
 `df -h`		displays information about the available disk space on the file system, including the file system name, total size, used space, available space, and utilization percentage, in gigabytes (GB).
 
 `echo 1 | sudo tee /sys/class/block/sda/device/rescan`	This command writes the value "1" to the rescan file in the block device directory using administrative privileges.
-
-`sudo fdisk -l`	Lists the partitions on all disks.
-
-`sudo fdisk /dev/sda`	Starts the fdisk utility for the specified disk, allowing you to create, modify, and delete disk partitions.
 
 `sudo gdisk /dev/sda`	Starts the gdisk utility for the specified disk, allowing you to create, modify, and delete disk partitions using the GUID Partition Table (GPT) format.
 
@@ -38,7 +30,7 @@ end of disk configs
 
 Some of this may not be needed if you are not configuring a clean install and have set these up before.
 
-`python3 -v` check the python install
+`python3` check the python install
 
 `sudo apt update`
 
@@ -60,7 +52,7 @@ Some of this may not be needed if you are not configuring a clean install and ha
 
 https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
-`bash Miniconda3-py310_23.1.0-1-Linux-x86_64.sh`
+`bash Miniconda3-py310_23.1.0-1-Linux-x86_64.sh` Run the installer from the downloads folder. Press Enter to proceed, then spacebar about 8x, then Enter to select the default installation location.
 
 `conda update conda`
 
@@ -73,6 +65,8 @@ https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 `conda install numpy`
 
 `conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia`
+
+### Make sure you have Jarvis downloaded at this point.
 
 `conda create -n jarvis python=3.8`
 

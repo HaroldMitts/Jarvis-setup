@@ -72,8 +72,6 @@ https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 `conda activate jarvis`
 
-`conda install -c conda-forge transformers`
-
 `pip install diffusion`
 
 `sudo apt-get install git`
@@ -94,19 +92,52 @@ https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 `conda create -n flask_env -c conda-forge flask waitress flask-cors tiktoken`
 
-### This code sets up the environment variables required to use Node Version Manager (NVM), a tool used to manage different versions of Node.js on a single machine.
+`sudo apt update`
 
-Overall, this code sets up the environment required to use NVM, which is used to manage different versions of Node.js on the same machine. By running this code in your shell environment, you can then use the nvm command to install and switch between different versions of Node.js as needed.
-
-Note: This command will append the export and source commands to the end of your ~/.bashrc file, which is a file that contains commands that are executed whenever a new bash session is started. This way, nvm will be loaded automatically whenever you open a new terminal or run bash.
-
-`echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc`
+`apt list --upgradeable`
 
 
+
+### Install nodejs and npm, and verify they installed
+
+`sudo apt update`
+
+`sudo apt install nodejs`
+
+`sudo apt install npm`
+
+`node -v`
 
 `nvm --version`
 
-### create a file named environment.yaml in the current working directory and write a list of all the packages installed in the current Conda environment to that file in YAML format
+### install diffusers, transformers, and controlnet_aux
+
+```
+git clone https://github.com/huggingface/diffusers.git
+cd diffusers
+git checkout 8c530fc2f6a76a2aefb6b285dce6df1675092ac6
+pip install .
+```
+
+```
+cd ..
+git clone https://github.com/huggingface/transformers.git
+cd transformers
+git checkout c612628045822f909020f7eb6784c79700813eda
+pip install .
+```
+
+```
+cd ..
+git clone https://github.com/patrickvonplaten/controlnet_aux
+cd controlnet_aux
+git checkout 78efc716868a7f5669c288233d65b471f542ce40
+pip install .
+
+cd ..
+```
+
+### Optional: create a file named environment.yaml in the current working directory and write a list of all the packages installed in the current Conda environment to that file in YAML format
 
 `conda list --export > environment.yaml`
 

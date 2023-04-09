@@ -74,7 +74,7 @@ https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 `conda install -c conda-forge transformers`
 
-`conda install -c conda-forge diffusion`
+`pip install diffusion`
 
 `sudo apt-get install git`
 
@@ -86,15 +86,14 @@ https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 `#sh download.sh`  #probably wont need this
 
-### When you run this command, Conda will create a new environment named flapip and install the latest version of PyTorch available in the default Conda channels. Once the environment is created, you can activate it using the conda activate flapip command, and then use PyTorch in that environment without affecting your other Python environments.
+### This command creates a new Conda environment named flask_env and installs the flask, waitress, flask-cors, and tiktoken packages from the Conda Forge channel in that environment. 
 
-`conda create -n flapip install pytorch`
+`conda create -n flask_env`
 
-### This command creates a new Conda environment named flask_env and installs the flask, waitress, flask-cors, and tiktoken packages from the Conda Forge channel in that environment.
+`conda activate flask_env`
 
-`flask_env -c conda-forge flask waitress flask-cors tiktoken`
+`conda create -n flask_env -c conda-forge flask waitress flask-cors tiktoken`
 
-`conda activate flask_env` When you create a new Conda environment and install packages in that environment, the environment is not active by default
 
 ### This code sets up the environment variables required to use Node Version Manager (NVM), a tool used to manage different versions of Node.js on a single machine.
 

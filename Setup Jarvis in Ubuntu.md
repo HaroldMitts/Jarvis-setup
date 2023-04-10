@@ -1,5 +1,5 @@
 # Some commands to setup HuggingGPT [Jarvis] on a clean Ubuntu install 
-Last Updated: April 7, 2023
+Last Updated: April 9, 2023
 
 This not a script, just a commented version of the history of my terminal in Ubuntu 22. Use at your own risk. 
 Read the comments before running any commands.

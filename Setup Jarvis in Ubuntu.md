@@ -6,6 +6,10 @@ Read the comments before running any commands.
 Check with Bing or GPT if you are unsure or unfamiliar with anything. 
 If you have suggestions for improvements, please let me know by creating an Issue.
 
+Note: The requirements.txt file provided by Jarvis team has errors. This guide also has errors. I would like to be able to just run the requirements.txt method, but unfortunately it fails on pesq, asteroid, and espnet.
+
+I am working through it to attempt to resolve and will update this guide as I solve each requirement.
+
 ## The following section is only needed if you need to expand your disk partition. 
 
 Usually needed only in a Hyper-v quick create scenario.

@@ -12,23 +12,80 @@ I am working through it to attempt to resolve and will update this guide as I so
 
 ## The following section is only needed if you need to expand your disk partition. 
 
-Usually needed only in a Hyper-v quick create scenario.
+Here's the complete sequence of commands to resize the partition and filesystem in your Ubuntu virtual machine:
 
-`df -h`		displays information about the available disk space on the file system, including the file system name, total size, used space, available space, and utilization percentage, in gigabytes (GB).
+1. Check current disk space and list the block devices:
 
-`echo 1 | sudo tee /sys/class/block/sda/device/rescan`	This command writes the value "1" to the rescan file in the block device directory using administrative privileges.
+```
+df -h 
+lsblk
+```
 
-`sudo gdisk /dev/sda`	Starts the gdisk utility for the specified disk, allowing you to create, modify, and delete disk partitions using the GUID Partition Table (GPT) format.
+2. Rescan the SCSI bus to recognize the new disk space:
 
-`sudo apt-get install cloud-guest-utils`	Installs the "cloud-guest-utils" package, which provides utilities for managing virtual machines in cloud environments.
+`echo 1 | sudo tee /sys/class/block/sda/device/rescan`
 
-`echo 1 | sudo tee /sys/class/block/sda/device/rescan`	The rescan process will cause the system to detect any new or modified disks and update its device list
+3. Check the current partition table:
 
-`sudo growpart /dev/sda 1`	Resizes the partition table of the specified disk to occupy all available space, using the growpart utility.
+`sudo fdisk -l`
 
-`sudo resize2fs /dev/sda1`	Resizes the file system on the specified partition to match the new size of the partition, using the resize2fs utility.
+4. Run fdisk to modify the partition table:
 
-end of disk configs
+`sudo fdisk /dev/sda`
+
+Inside fdisk, follow these steps:
+
+a. Press `p` to print the current partition table.
+
+b. Note the starting sector of the partition you want to resize (usually `/dev/sda1`).
+
+c. Press `d` to delete the partition.
+
+d. Press `n` to create a new partition.
+
+e. Choose the primary partition type.
+
+f. Enter the partition number (usually `1`).
+
+g. Enter the starting sector from the previous partition (noted in step b).
+
+h. Press `Enter` to use the default value for the last sector, which will utilize the full available disk space.
+
+i. When prompted with the warning about the existing filesystem signature, press `N` and then `Enter` to keep the existing signature.
+
+j. Press `w` to write the changes and exit fdisk.
+
+
+5. Reboot the system:
+
+`sudo reboot`
+
+6. After the system has rebooted, check the block devices again:
+
+`lsblk`
+
+7. Install cloud-guest-utils package to use growpart:
+
+```
+sudo apt-get update
+sudo apt-get install cloud-guest-utils
+```
+
+8. Resize the partition (if necessary) to use the new disk space:
+
+`sudo growpart /dev/sda 1`
+
+This step might not be needed if the partition has already been resized to use the new disk space during the fdisk process.
+
+9. Resize the filesystem on the partition:
+
+`sudo resize2fs /dev/sda1`
+
+10. Verify that the partition has been resized and is using the new disk space:
+
+`df -h`
+
+With these steps, you should be able to resize the partition and filesystem in your Ubuntu virtual machine to use the new disk space you've added.
 
 ### beginning of Ubuntu clean installation Jarvis setup. 
 
@@ -86,7 +143,6 @@ https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 `pip install -r requirements.txt` read the label above before running this command.
 
-`#sh download.sh`  #probably wont need this
 
 ### This command creates a new Conda environment named flask_env and installs the flask, waitress, flask-cors, and tiktoken packages from the Conda Forge channel in that environment. 
 

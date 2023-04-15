@@ -1,7 +1,7 @@
 # Some commands to setup HuggingGPT [Jarvis] on a clean WSL install 
 Last Updated: April 14, 2023
 
-This not a script, just a commented version of the history of my terminal in Ubuntu 22. Use at your own risk. 
+This not a script, just a commented version of the history of my terminal in Ubuntu on Window Subsystem for Linux. Use at your own risk. 
 
 Read the comments before running any commands.
 

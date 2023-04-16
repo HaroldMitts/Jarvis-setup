@@ -10,7 +10,7 @@ If you have suggestions for improvements, please let me know by creating an Issu
 
 Make sure disk space is available before setting up Jarvis.
 
-You can review the entire history of my WSL installation on Windows 10 here [https://github.com/HaroldMitts/pub/blob/main/WSL-Jarvis-Setup-Full.txt](https://github.com/HaroldMitts/pub/blob/main/WSL-Jarvis-Setup-Full.txt)
+You can review the entire history of my WSL installation, with some minor comments added for clarity, on Windows 10 here [https://github.com/HaroldMitts/pub/blob/main/WSL-Jarvis-Setup-Full.txt](https://github.com/HaroldMitts/pub/blob/main/WSL-Jarvis-Setup-Full.txt)
 
 
 ```

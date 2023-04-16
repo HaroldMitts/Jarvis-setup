@@ -1,0 +1,2576 @@
+root@Strix:/mnt/d# ls -la
+ls: 'System Volume Information': Permission denied
+total 4
+drwxrwxrwx 1 root root 4096 Apr 14 12:02 '$RECYCLE.BIN'
+drwxrwxrwx 1 root root 4096 Apr 15 13:40  .
+drwxr-xr-x 6 root root 4096 Apr 15 14:19  ..
+d--x--x--x 1 root root 4096 Apr 14 12:15 'System Volume Information'
+drwxrwxrwx 1 root root 4096 Apr 15 13:04  WSL
+drwxrwxrwx 1 root root 4096 Apr 14 14:36  tmp
+root@Strix:/mnt/d# echo $HOME
+/root
+root@Strix:/mnt/d# whoami
+root
+root@Strix:/mnt/d# adduser harold
+Adding user `harold' ...
+Adding new group `harold' (1000) ...
+Adding new user `harold' (1000) with group `harold' ...
+Creating home directory `/home/harold' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for harold
+Enter the new value, or press ENTER for the default
+        Full Name [Harold Mitts]: Harold Mitts
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] y
+root@Strix:/mnt/d# usermod -aG sudo harold
+root@Strix:/mnt/d# su - harold
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.15.90.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Apr 15 16:53:21 HST 2023
+
+  System load:  0.0                Processes:             11
+  Usage of /:   0.5% of 250.92GB   Users logged in:       0
+  Memory usage: 2%                 IPv4 address for eth0: 172.29.149.38
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+This message is shown once a day. To disable it please create the
+/home/harold/.hushlogin file.
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ sudo apt update -y
+[sudo] password for harold:
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [2085 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [338 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/main amd64 c-n-f Metadata [12.5 kB]
+Get:8 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [1609 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [8628 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/restricted Translation-en [227 kB]
+Get:11 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 c-n-f Metadata [612 B]
+Get:12 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [821 kB]
+Get:13 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [165 kB]
+Get:14 http://security.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [17.6 kB]
+Get:15 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [22.9 kB]
+Get:16 http://security.ubuntu.com/ubuntu focal-security/multiverse Translation-en [5488 B]
+Get:17 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 c-n-f Metadata [516 B]
+Get:18 http://archive.ubuntu.com/ubuntu focal/universe Translation-en [5124 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal/universe amd64 c-n-f Metadata [265 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [144 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal/multiverse Translation-en [104 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 c-n-f Metadata [9136 B]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [2469 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/main Translation-en [421 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 c-n-f Metadata [16.4 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [1717 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal-updates/restricted Translation-en [242 kB]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 c-n-f Metadata [612 B]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1047 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [247 kB]
+Get:31 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [24.2 kB]
+Get:32 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [25.2 kB]
+Get:33 http://archive.ubuntu.com/ubuntu focal-updates/multiverse Translation-en [7408 B]
+Get:34 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 c-n-f Metadata [592 B]
+Get:35 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [45.7 kB]
+Get:36 http://archive.ubuntu.com/ubuntu focal-backports/main Translation-en [16.3 kB]
+Get:37 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 c-n-f Metadata [1420 B]
+Get:38 http://archive.ubuntu.com/ubuntu focal-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:39 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [24.9 kB]
+Get:40 http://archive.ubuntu.com/ubuntu focal-backports/universe Translation-en [16.3 kB]
+Get:41 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 c-n-f Metadata [880 B]
+Get:42 http://archive.ubuntu.com/ubuntu focal-backports/multiverse amd64 c-n-f Metadata [116 B]
+Fetched 26.2 MB in 7s (3628 kB/s)
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+59 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ sudo apt-get update
+Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists... Done
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ apt list --upgradeable
+Listing... Done
+apparmor/focal-updates 2.13.3-7ubuntu5.2 amd64 [upgradable from: 2.13.3-7ubuntu5.1]
+apport/focal-security 2.20.11-0ubuntu27.26 all [upgradable from: 2.20.11-0ubuntu27.25]
+base-files/focal-updates 11ubuntu5.7 amd64 [upgradable from: 11ubuntu5.6]
+bind9-dnsutils/focal-updates 1:9.16.1-0ubuntu2.14 amd64 [upgradable from: 1:9.16.1-0ubuntu2.12]
+bind9-host/focal-updates 1:9.16.1-0ubuntu2.14 amd64 [upgradable from: 1:9.16.1-0ubuntu2.12]
+bind9-libs/focal-updates 1:9.16.1-0ubuntu2.14 amd64 [upgradable from: 1:9.16.1-0ubuntu2.12]
+bolt/focal-updates 0.9.1-2~ubuntu20.04.2 amd64 [upgradable from: 0.9.1-2~ubuntu20.04.1]
+cloud-init/focal-updates 23.1.1-0ubuntu0~20.04.1 all [upgradable from: 22.4.2-0ubuntu0~20.04.2]
+curl/focal-updates,focal-security 7.68.0-1ubuntu2.18 amd64 [upgradable from: 7.68.0-1ubuntu2.15]
+distro-info-data/focal-updates 0.43ubuntu1.12 all [upgradable from: 0.43ubuntu1.11]
+fwupd-signed/focal-updates 1.51~20.04.1+1.2-3ubuntu0.2 amd64 [upgradable from: 1.27.1ubuntu7+1.2-2~20.04.1]
+isc-dhcp-client/focal-updates 4.4.1-2.1ubuntu5.20.04.5 amd64 [upgradable from: 4.4.1-2.1ubuntu5.20.04.4]
+isc-dhcp-common/focal-updates 4.4.1-2.1ubuntu5.20.04.5 amd64 [upgradable from: 4.4.1-2.1ubuntu5.20.04.4]
+krb5-locales/focal-updates,focal-security 1.17-6ubuntu4.3 all [upgradable from: 1.17-6ubuntu4.2]
+libapparmor1/focal-updates 2.13.3-7ubuntu5.2 amd64 [upgradable from: 2.13.3-7ubuntu5.1]
+libcurl3-gnutls/focal-updates,focal-security 7.68.0-1ubuntu2.18 amd64 [upgradable from: 7.68.0-1ubuntu2.15]
+libcurl4/focal-updates,focal-security 7.68.0-1ubuntu2.18 amd64 [upgradable from: 7.68.0-1ubuntu2.15]
+libgnutls30/focal-updates,focal-security 3.6.13-2ubuntu1.8 amd64 [upgradable from: 3.6.13-2ubuntu1.7]
+libgssapi-krb5-2/focal-updates,focal-security 1.17-6ubuntu4.3 amd64 [upgradable from: 1.17-6ubuntu4.2]
+libk5crypto3/focal-updates,focal-security 1.17-6ubuntu4.3 amd64 [upgradable from: 1.17-6ubuntu4.2]
+libkrb5-3/focal-updates,focal-security 1.17-6ubuntu4.3 amd64 [upgradable from: 1.17-6ubuntu4.2]
+libkrb5support0/focal-updates,focal-security 1.17-6ubuntu4.3 amd64 [upgradable from: 1.17-6ubuntu4.2]
+libnss-systemd/focal-updates 245.4-4ubuntu3.21 amd64 [upgradable from: 245.4-4ubuntu3.19]
+libnss3/focal-updates,focal-security 2:3.49.1-1ubuntu1.9 amd64 [upgradable from: 2:3.49.1-1ubuntu1.8]
+libpam-systemd/focal-updates 245.4-4ubuntu3.21 amd64 [upgradable from: 245.4-4ubuntu3.19]
+libpython3.8-minimal/focal-updates,focal-security 3.8.10-0ubuntu1~20.04.7 amd64 [upgradable from: 3.8.10-0ubuntu1~20.04.6]
+libpython3.8-stdlib/focal-updates,focal-security 3.8.10-0ubuntu1~20.04.7 amd64 [upgradable from: 3.8.10-0ubuntu1~20.04.6]
+libpython3.8/focal-updates,focal-security 3.8.10-0ubuntu1~20.04.7 amd64 [upgradable from: 3.8.10-0ubuntu1~20.04.6]
+libsystemd0/focal-updates 245.4-4ubuntu3.21 amd64 [upgradable from: 245.4-4ubuntu3.19]
+libtdb1/focal-updates,focal-security 1.4.5-0ubuntu0.20.04.1 amd64 [upgradable from: 1.4.3-0ubuntu0.20.04.1]
+libudev1/focal-updates 245.4-4ubuntu3.21 amd64 [upgradable from: 245.4-4ubuntu3.19]
+libunwind8/focal-updates 1.2.1-9ubuntu0.1 amd64 [upgradable from: 1.2.1-9build1]
+motd-news-config/focal-updates 11ubuntu5.7 all [upgradable from: 11ubuntu5.6]
+python-apt-common/focal-updates 2.0.1ubuntu0.20.04.1 all [upgradable from: 2.0.1]
+python3-apport/focal-security 2.20.11-0ubuntu27.26 all [upgradable from: 2.20.11-0ubuntu27.25]
+python3-apt/focal-updates 2.0.1ubuntu0.20.04.1 amd64 [upgradable from: 2.0.1]
+python3-distupgrade/focal-updates 1:20.04.41 all [upgradable from: 1:20.04.40]
+python3-problem-report/focal-security 2.20.11-0ubuntu27.26 all [upgradable from: 2.20.11-0ubuntu27.25]
+python3-software-properties/focal-updates 0.99.9.11 all [upgradable from: 0.99.9.10]
+python3.8-minimal/focal-updates,focal-security 3.8.10-0ubuntu1~20.04.7 amd64 [upgradable from: 3.8.10-0ubuntu1~20.04.6]
+python3.8/focal-updates,focal-security 3.8.10-0ubuntu1~20.04.7 amd64 [upgradable from: 3.8.10-0ubuntu1~20.04.6]
+rsync/focal-updates,focal-security 3.1.3-8ubuntu0.5 amd64 [upgradable from: 3.1.3-8ubuntu0.4]
+software-properties-common/focal-updates 0.99.9.11 all [upgradable from: 0.99.9.10]
+sudo/focal-updates,focal-security 1.8.31-1ubuntu1.5 amd64 [upgradable from: 1.8.31-1ubuntu1.4]
+systemd-sysv/focal-updates 245.4-4ubuntu3.21 amd64 [upgradable from: 245.4-4ubuntu3.19]
+systemd-timesyncd/focal-updates 245.4-4ubuntu3.21 amd64 [upgradable from: 245.4-4ubuntu3.19]
+systemd/focal-updates 245.4-4ubuntu3.21 amd64 [upgradable from: 245.4-4ubuntu3.19]
+tar/focal-updates,focal-security 1.30+dfsg-7ubuntu0.20.04.3 amd64 [upgradable from: 1.30+dfsg-7ubuntu0.20.04.2]
+tcpdump/focal-updates 4.9.3-4ubuntu0.2 amd64 [upgradable from: 4.9.3-4ubuntu0.1]
+tzdata/focal-updates,focal-security 2023c-0ubuntu0.20.04.0 all [upgradable from: 2022g-0ubuntu0.20.04.1]
+ubuntu-advantage-tools/focal-updates 27.13.6~20.04.1 amd64 [upgradable from: 27.13.5~20.04.1]
+ubuntu-release-upgrader-core/focal-updates 1:20.04.41 all [upgradable from: 1:20.04.40]
+udev/focal-updates 245.4-4ubuntu3.21 amd64 [upgradable from: 245.4-4ubuntu3.19]
+update-notifier-common/focal-updates 3.192.30.17 all [upgradable from: 3.192.30.16]
+vim-common/focal-updates,focal-security 2:8.1.2269-1ubuntu5.13 all [upgradable from: 2:8.1.2269-1ubuntu5.11]
+vim-runtime/focal-updates,focal-security 2:8.1.2269-1ubuntu5.13 all [upgradable from: 2:8.1.2269-1ubuntu5.11]
+vim-tiny/focal-updates,focal-security 2:8.1.2269-1ubuntu5.13 amd64 [upgradable from: 2:8.1.2269-1ubuntu5.11]
+vim/focal-updates,focal-security 2:8.1.2269-1ubuntu5.13 amd64 [upgradable from: 2:8.1.2269-1ubuntu5.11]
+xxd/focal-updates,focal-security 2:8.1.2269-1ubuntu5.13 amd64 [upgradable from: 2:8.1.2269-1ubuntu5.11]
+
+harold@Strix:~$ git --version
+git version 2.25.1
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ sudo apt install --only-upgrade python3
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+python3 is already the newest version (3.8.2-0ubuntu2).
+0 upgraded, 0 newly installed, 0 to remove and 59 not upgraded.
+harold@Strix:~$ python3 -V
+Python 3.8.10
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ sudo apt update && sudo apt upgrade -y
+Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+59 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  apparmor apport base-files bind9-dnsutils bind9-host bind9-libs bolt cloud-init curl distro-info-data fwupd-signed isc-dhcp-client isc-dhcp-common krb5-locales libapparmor1 libcurl3-gnutls
+  libcurl4 libgnutls30 libgssapi-krb5-2 libk5crypto3 libkrb5-3 libkrb5support0 libnss-systemd libnss3 libpam-systemd libpython3.8 libpython3.8-minimal libpython3.8-stdlib libsystemd0 libtdb1
+  libudev1 libunwind8 motd-news-config python-apt-common python3-apport python3-apt python3-distupgrade python3-problem-report python3-software-properties python3.8 python3.8-minimal rsync
+  software-properties-common sudo systemd systemd-sysv systemd-timesyncd tar tcpdump tzdata ubuntu-advantage-tools ubuntu-release-upgrader-core udev update-notifier-common vim vim-common
+  vim-runtime vim-tiny xxd
+59 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+28 standard LTS security updates
+Need to get 28.9 MB of archives.
+After this operation, 147 kB of additional disk space will be used.
+Get:1 http://security.ubuntu.com/ubuntu focal-security/main amd64 python3-problem-report all 2.20.11-0ubuntu27.26 [11.1 kB]
+Get:2 http://security.ubuntu.com/ubuntu focal-security/main amd64 python3-apport all 2.20.11-0ubuntu27.26 [87.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 motd-news-config all 11ubuntu5.7 [4292 B]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 base-files amd64 11ubuntu5.7 [60.4 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security/main amd64 apport all 2.20.11-0ubuntu27.26 [129 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 tar amd64 1.30+dfsg-7ubuntu0.20.04.3 [240 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnss-systemd amd64 245.4-4ubuntu3.21 [95.8 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 udev amd64 245.4-4ubuntu3.21 [1366 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libudev1 amd64 245.4-4ubuntu3.21 [75.9 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd-sysv amd64 245.4-4ubuntu3.21 [10.3 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd-timesyncd amd64 245.4-4ubuntu3.21 [28.1 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpam-systemd amd64 245.4-4ubuntu3.21 [186 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libapparmor1 amd64 2.13.3-7ubuntu5.2 [35.4 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgnutls30 amd64 3.6.13-2ubuntu1.8 [829 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd amd64 245.4-4ubuntu3.21 [3810 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsystemd0 amd64 245.4-4ubuntu3.21 [268 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8 amd64 3.8.10-0ubuntu1~20.04.7 [1626 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8 amd64 3.8.10-0ubuntu1~20.04.7 [387 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-stdlib amd64 3.8.10-0ubuntu1~20.04.7 [1675 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8-minimal amd64 3.8.10-0ubuntu1~20.04.7 [1903 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-minimal amd64 3.8.10-0ubuntu1~20.04.7 [717 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 rsync amd64 3.1.3-8ubuntu0.5 [322 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python-apt-common all 2.0.1ubuntu0.20.04.1 [16.5 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-apt amd64 2.0.1ubuntu0.20.04.1 [154 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 update-notifier-common all 3.192.30.17 [173 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 distro-info-data all 0.43ubuntu1.12 [4676 B]
+Get:27 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 isc-dhcp-client amd64 4.4.1-2.1ubuntu5.20.04.5 [247 kB]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 isc-dhcp-common amd64 4.4.1-2.1ubuntu5.20.04.5 [45.3 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 sudo amd64 1.8.31-1ubuntu1.5 [515 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 tzdata all 2023c-0ubuntu0.20.04.0 [287 kB]
+Get:31 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-advantage-tools amd64 27.13.6~20.04.1 [173 kB]
+Get:32 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 vim amd64 2:8.1.2269-1ubuntu5.13 [1240 kB]
+Get:33 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 vim-tiny amd64 2:8.1.2269-1ubuntu5.13 [580 kB]
+Get:34 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 vim-runtime all 2:8.1.2269-1ubuntu5.13 [5875 kB]
+Get:35 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 xxd amd64 2:8.1.2269-1ubuntu5.13 [51.7 kB]
+Get:36 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 vim-common all 2:8.1.2269-1ubuntu5.13 [86.7 kB]
+Get:37 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 apparmor amd64 2.13.3-7ubuntu5.2 [502 kB]
+Get:38 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgssapi-krb5-2 amd64 1.17-6ubuntu4.3 [121 kB]
+Get:39 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkrb5-3 amd64 1.17-6ubuntu4.3 [330 kB]
+Get:40 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkrb5support0 amd64 1.17-6ubuntu4.3 [31.1 kB]
+Get:41 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libk5crypto3 amd64 1.17-6ubuntu4.3 [80.2 kB]
+Get:42 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-dnsutils amd64 1:9.16.1-0ubuntu2.14 [134 kB]
+Get:43 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-libs amd64 1:9.16.1-0ubuntu2.14 [1109 kB]
+Get:44 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-host amd64 1:9.16.1-0ubuntu2.14 [43.0 kB]
+Get:45 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 krb5-locales all 1.17-6ubuntu4.3 [11.6 kB]
+Get:46 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-release-upgrader-core all 1:20.04.41 [24.3 kB]
+Get:47 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-distupgrade all 1:20.04.41 [105 kB]
+Get:48 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 tcpdump amd64 4.9.3-4ubuntu0.2 [369 kB]
+Get:49 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bolt amd64 0.9.1-2~ubuntu20.04.2 [143 kB]
+Get:50 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.18 [161 kB]
+Get:51 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl4 amd64 7.68.0-1ubuntu2.18 [236 kB]
+Get:52 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 fwupd-signed amd64 1.51~20.04.1+1.2-3ubuntu0.2 [28.7 kB]
+Get:53 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl3-gnutls amd64 7.68.0-1ubuntu2.18 [233 kB]
+Get:54 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnss3 amd64 2:3.49.1-1ubuntu1.9 [1256 kB]
+Get:55 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libtdb1 amd64 1.4.5-0ubuntu0.20.04.1 [44.2 kB]
+Get:56 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libunwind8 amd64 1.2.1-9ubuntu0.1 [47.7 kB]
+Get:57 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 software-properties-common all 0.99.9.11 [10.4 kB]
+Get:58 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-software-properties all 0.99.9.11 [21.6 kB]
+Get:59 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 cloud-init all 23.1.1-0ubuntu0~20.04.1 [534 kB]
+Fetched 28.9 MB in 14s (2103 kB/s)
+Extracting templates from packages: 100%
+Preconfiguring packages ...
+(Reading database ... 32657 files and directories currently installed.)
+Preparing to unpack .../motd-news-config_11ubuntu5.7_all.deb ...
+Unpacking motd-news-config (11ubuntu5.7) over (11ubuntu5.6) ...
+Preparing to unpack .../base-files_11ubuntu5.7_amd64.deb ...
+Unpacking base-files (11ubuntu5.7) over (11ubuntu5.6) ...
+Setting up base-files (11ubuntu5.7) ...
+Installing new version of config file /etc/issue ...
+Installing new version of config file /etc/issue.net ...
+Installing new version of config file /etc/lsb-release ...
+(Reading database ... 32657 files and directories currently installed.)
+Preparing to unpack .../tar_1.30+dfsg-7ubuntu0.20.04.3_amd64.deb ...
+Unpacking tar (1.30+dfsg-7ubuntu0.20.04.3) over (1.30+dfsg-7ubuntu0.20.04.2) ...
+Setting up tar (1.30+dfsg-7ubuntu0.20.04.3) ...
+(Reading database ... 32657 files and directories currently installed.)
+Preparing to unpack .../libnss-systemd_245.4-4ubuntu3.21_amd64.deb ...
+Unpacking libnss-systemd:amd64 (245.4-4ubuntu3.21) over (245.4-4ubuntu3.19) ...
+Preparing to unpack .../udev_245.4-4ubuntu3.21_amd64.deb ...
+Unpacking udev (245.4-4ubuntu3.21) over (245.4-4ubuntu3.19) ...
+Preparing to unpack .../libudev1_245.4-4ubuntu3.21_amd64.deb ...
+Unpacking libudev1:amd64 (245.4-4ubuntu3.21) over (245.4-4ubuntu3.19) ...
+Setting up libudev1:amd64 (245.4-4ubuntu3.21) ...
+(Reading database ... 32657 files and directories currently installed.)
+Preparing to unpack .../systemd-sysv_245.4-4ubuntu3.21_amd64.deb ...
+Unpacking systemd-sysv (245.4-4ubuntu3.21) over (245.4-4ubuntu3.19) ...
+Preparing to unpack .../systemd-timesyncd_245.4-4ubuntu3.21_amd64.deb ...
+Unpacking systemd-timesyncd (245.4-4ubuntu3.21) over (245.4-4ubuntu3.19) ...
+Preparing to unpack .../libpam-systemd_245.4-4ubuntu3.21_amd64.deb ...
+Unpacking libpam-systemd:amd64 (245.4-4ubuntu3.21) over (245.4-4ubuntu3.19) ...
+Preparing to unpack .../libapparmor1_2.13.3-7ubuntu5.2_amd64.deb ...
+Unpacking libapparmor1:amd64 (2.13.3-7ubuntu5.2) over (2.13.3-7ubuntu5.1) ...
+Preparing to unpack .../libgnutls30_3.6.13-2ubuntu1.8_amd64.deb ...
+Unpacking libgnutls30:amd64 (3.6.13-2ubuntu1.8) over (3.6.13-2ubuntu1.7) ...
+Setting up libgnutls30:amd64 (3.6.13-2ubuntu1.8) ...
+(Reading database ... 32657 files and directories currently installed.)
+Preparing to unpack .../systemd_245.4-4ubuntu3.21_amd64.deb ...
+Unpacking systemd (245.4-4ubuntu3.21) over (245.4-4ubuntu3.19) ...
+Preparing to unpack .../libsystemd0_245.4-4ubuntu3.21_amd64.deb ...
+Unpacking libsystemd0:amd64 (245.4-4ubuntu3.21) over (245.4-4ubuntu3.19) ...
+Setting up libsystemd0:amd64 (245.4-4ubuntu3.21) ...
+(Reading database ... 32657 files and directories currently installed.)
+Preparing to unpack .../00-libpython3.8_3.8.10-0ubuntu1~20.04.7_amd64.deb ...
+Unpacking libpython3.8:amd64 (3.8.10-0ubuntu1~20.04.7) over (3.8.10-0ubuntu1~20.04.6) ...
+Preparing to unpack .../01-python3.8_3.8.10-0ubuntu1~20.04.7_amd64.deb ...
+Unpacking python3.8 (3.8.10-0ubuntu1~20.04.7) over (3.8.10-0ubuntu1~20.04.6) ...
+Preparing to unpack .../02-libpython3.8-stdlib_3.8.10-0ubuntu1~20.04.7_amd64.deb ...
+Unpacking libpython3.8-stdlib:amd64 (3.8.10-0ubuntu1~20.04.7) over (3.8.10-0ubuntu1~20.04.6) ...
+Preparing to unpack .../03-python3.8-minimal_3.8.10-0ubuntu1~20.04.7_amd64.deb ...
+Unpacking python3.8-minimal (3.8.10-0ubuntu1~20.04.7) over (3.8.10-0ubuntu1~20.04.6) ...
+Preparing to unpack .../04-libpython3.8-minimal_3.8.10-0ubuntu1~20.04.7_amd64.deb ...
+Unpacking libpython3.8-minimal:amd64 (3.8.10-0ubuntu1~20.04.7) over (3.8.10-0ubuntu1~20.04.6) ...
+Preparing to unpack .../05-rsync_3.1.3-8ubuntu0.5_amd64.deb ...
+Unpacking rsync (3.1.3-8ubuntu0.5) over (3.1.3-8ubuntu0.4) ...
+Preparing to unpack .../06-python-apt-common_2.0.1ubuntu0.20.04.1_all.deb ...
+Unpacking python-apt-common (2.0.1ubuntu0.20.04.1) over (2.0.1) ...
+Preparing to unpack .../07-python3-apt_2.0.1ubuntu0.20.04.1_amd64.deb ...
+Unpacking python3-apt (2.0.1ubuntu0.20.04.1) over (2.0.1) ...
+Preparing to unpack .../08-update-notifier-common_3.192.30.17_all.deb ...
+Unpacking update-notifier-common (3.192.30.17) over (3.192.30.16) ...
+Preparing to unpack .../09-distro-info-data_0.43ubuntu1.12_all.deb ...
+Unpacking distro-info-data (0.43ubuntu1.12) over (0.43ubuntu1.11) ...
+Preparing to unpack .../10-isc-dhcp-client_4.4.1-2.1ubuntu5.20.04.5_amd64.deb ...
+Unpacking isc-dhcp-client (4.4.1-2.1ubuntu5.20.04.5) over (4.4.1-2.1ubuntu5.20.04.4) ...
+Preparing to unpack .../11-isc-dhcp-common_4.4.1-2.1ubuntu5.20.04.5_amd64.deb ...
+Unpacking isc-dhcp-common (4.4.1-2.1ubuntu5.20.04.5) over (4.4.1-2.1ubuntu5.20.04.4) ...
+Preparing to unpack .../12-sudo_1.8.31-1ubuntu1.5_amd64.deb ...
+Unpacking sudo (1.8.31-1ubuntu1.5) over (1.8.31-1ubuntu1.4) ...
+Preparing to unpack .../13-tzdata_2023c-0ubuntu0.20.04.0_all.deb ...
+Unpacking tzdata (2023c-0ubuntu0.20.04.0) over (2022g-0ubuntu0.20.04.1) ...
+Preparing to unpack .../14-ubuntu-advantage-tools_27.13.6~20.04.1_amd64.deb ...
+Unpacking ubuntu-advantage-tools (27.13.6~20.04.1) over (27.13.5~20.04.1) ...
+Preparing to unpack .../15-vim_2%3a8.1.2269-1ubuntu5.13_amd64.deb ...
+Unpacking vim (2:8.1.2269-1ubuntu5.13) over (2:8.1.2269-1ubuntu5.11) ...
+Preparing to unpack .../16-vim-tiny_2%3a8.1.2269-1ubuntu5.13_amd64.deb ...
+Unpacking vim-tiny (2:8.1.2269-1ubuntu5.13) over (2:8.1.2269-1ubuntu5.11) ...
+Preparing to unpack .../17-vim-runtime_2%3a8.1.2269-1ubuntu5.13_all.deb ...
+Unpacking vim-runtime (2:8.1.2269-1ubuntu5.13) over (2:8.1.2269-1ubuntu5.11) ...
+Preparing to unpack .../18-xxd_2%3a8.1.2269-1ubuntu5.13_amd64.deb ...
+Unpacking xxd (2:8.1.2269-1ubuntu5.13) over (2:8.1.2269-1ubuntu5.11) ...
+Preparing to unpack .../19-vim-common_2%3a8.1.2269-1ubuntu5.13_all.deb ...
+Unpacking vim-common (2:8.1.2269-1ubuntu5.13) over (2:8.1.2269-1ubuntu5.11) ...
+Preparing to unpack .../20-apparmor_2.13.3-7ubuntu5.2_amd64.deb ...
+Unpacking apparmor (2.13.3-7ubuntu5.2) over (2.13.3-7ubuntu5.1) ...
+Preparing to unpack .../21-libgssapi-krb5-2_1.17-6ubuntu4.3_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.17-6ubuntu4.3) over (1.17-6ubuntu4.2) ...
+Preparing to unpack .../22-libkrb5-3_1.17-6ubuntu4.3_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.17-6ubuntu4.3) over (1.17-6ubuntu4.2) ...
+Preparing to unpack .../23-libkrb5support0_1.17-6ubuntu4.3_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.17-6ubuntu4.3) over (1.17-6ubuntu4.2) ...
+Preparing to unpack .../24-libk5crypto3_1.17-6ubuntu4.3_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.17-6ubuntu4.3) over (1.17-6ubuntu4.2) ...
+Preparing to unpack .../25-bind9-dnsutils_1%3a9.16.1-0ubuntu2.14_amd64.deb ...
+Unpacking bind9-dnsutils (1:9.16.1-0ubuntu2.14) over (1:9.16.1-0ubuntu2.12) ...
+Preparing to unpack .../26-bind9-libs_1%3a9.16.1-0ubuntu2.14_amd64.deb ...
+Unpacking bind9-libs:amd64 (1:9.16.1-0ubuntu2.14) over (1:9.16.1-0ubuntu2.12) ...
+Preparing to unpack .../27-bind9-host_1%3a9.16.1-0ubuntu2.14_amd64.deb ...
+Unpacking bind9-host (1:9.16.1-0ubuntu2.14) over (1:9.16.1-0ubuntu2.12) ...
+Preparing to unpack .../28-krb5-locales_1.17-6ubuntu4.3_all.deb ...
+Unpacking krb5-locales (1.17-6ubuntu4.3) over (1.17-6ubuntu4.2) ...
+Preparing to unpack .../29-ubuntu-release-upgrader-core_1%3a20.04.41_all.deb ...
+Unpacking ubuntu-release-upgrader-core (1:20.04.41) over (1:20.04.40) ...
+Preparing to unpack .../30-python3-distupgrade_1%3a20.04.41_all.deb ...
+Unpacking python3-distupgrade (1:20.04.41) over (1:20.04.40) ...
+Preparing to unpack .../31-tcpdump_4.9.3-4ubuntu0.2_amd64.deb ...
+Unpacking tcpdump (4.9.3-4ubuntu0.2) over (4.9.3-4ubuntu0.1) ...
+Preparing to unpack .../32-python3-problem-report_2.20.11-0ubuntu27.26_all.deb ...
+Unpacking python3-problem-report (2.20.11-0ubuntu27.26) over (2.20.11-0ubuntu27.25) ...
+Preparing to unpack .../33-python3-apport_2.20.11-0ubuntu27.26_all.deb ...
+Unpacking python3-apport (2.20.11-0ubuntu27.26) over (2.20.11-0ubuntu27.25) ...
+Preparing to unpack .../34-apport_2.20.11-0ubuntu27.26_all.deb ...
+invoke-rc.d: could not determine current runlevel
+ * Stopping automatic crash report generation: apport                                                                                                                                         [ OK ]
+Unpacking apport (2.20.11-0ubuntu27.26) over (2.20.11-0ubuntu27.25) ...
+Preparing to unpack .../35-bolt_0.9.1-2~ubuntu20.04.2_amd64.deb ...
+Unpacking bolt (0.9.1-2~ubuntu20.04.2) over (0.9.1-2~ubuntu20.04.1) ...
+Preparing to unpack .../36-curl_7.68.0-1ubuntu2.18_amd64.deb ...
+Unpacking curl (7.68.0-1ubuntu2.18) over (7.68.0-1ubuntu2.15) ...
+Preparing to unpack .../37-libcurl4_7.68.0-1ubuntu2.18_amd64.deb ...
+Unpacking libcurl4:amd64 (7.68.0-1ubuntu2.18) over (7.68.0-1ubuntu2.15) ...
+Preparing to unpack .../38-fwupd-signed_1.51~20.04.1+1.2-3ubuntu0.2_amd64.deb ...
+Unpacking fwupd-signed (1.51~20.04.1+1.2-3ubuntu0.2) over (1.27.1ubuntu7+1.2-2~20.04.1) ...
+Preparing to unpack .../39-libcurl3-gnutls_7.68.0-1ubuntu2.18_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.68.0-1ubuntu2.18) over (7.68.0-1ubuntu2.15) ...
+Preparing to unpack .../40-libnss3_2%3a3.49.1-1ubuntu1.9_amd64.deb ...
+Unpacking libnss3:amd64 (2:3.49.1-1ubuntu1.9) over (2:3.49.1-1ubuntu1.8) ...
+Preparing to unpack .../41-libtdb1_1.4.5-0ubuntu0.20.04.1_amd64.deb ...
+Unpacking libtdb1:amd64 (1.4.5-0ubuntu0.20.04.1) over (1.4.3-0ubuntu0.20.04.1) ...
+Preparing to unpack .../42-libunwind8_1.2.1-9ubuntu0.1_amd64.deb ...
+Unpacking libunwind8:amd64 (1.2.1-9ubuntu0.1) over (1.2.1-9build1) ...
+Preparing to unpack .../43-software-properties-common_0.99.9.11_all.deb ...
+Unpacking software-properties-common (0.99.9.11) over (0.99.9.10) ...
+Preparing to unpack .../44-python3-software-properties_0.99.9.11_all.deb ...
+Unpacking python3-software-properties (0.99.9.11) over (0.99.9.10) ...
+Preparing to unpack .../45-cloud-init_23.1.1-0ubuntu0~20.04.1_all.deb ...
+Unpacking cloud-init (23.1.1-0ubuntu0~20.04.1) over (22.4.2-0ubuntu0~20.04.2) ...
+Setting up motd-news-config (11ubuntu5.7) ...
+Setting up tcpdump (4.9.3-4ubuntu0.2) ...
+Installing new version of config file /etc/apparmor.d/usr.sbin.tcpdump ...
+Setting up libapparmor1:amd64 (2.13.3-7ubuntu5.2) ...
+Setting up libpython3.8-minimal:amd64 (3.8.10-0ubuntu1~20.04.7) ...
+Setting up python3-problem-report (2.20.11-0ubuntu27.26) ...
+Setting up distro-info-data (0.43ubuntu1.12) ...
+Setting up libtdb1:amd64 (1.4.5-0ubuntu0.20.04.1) ...
+Setting up isc-dhcp-client (4.4.1-2.1ubuntu5.20.04.5) ...
+Installing new version of config file /etc/apparmor.d/sbin.dhclient ...
+Setting up fwupd-signed (1.51~20.04.1+1.2-3ubuntu0.2) ...
+Setting up krb5-locales (1.17-6ubuntu4.3) ...
+Setting up libnss3:amd64 (2:3.49.1-1ubuntu1.9) ...
+Setting up libunwind8:amd64 (1.2.1-9ubuntu0.1) ...
+Setting up xxd (2:8.1.2269-1ubuntu5.13) ...
+Setting up libkrb5support0:amd64 (1.17-6ubuntu4.3) ...
+Setting up tzdata (2023c-0ubuntu0.20.04.0) ...
+
+Current default time zone: 'Pacific/Honolulu'
+Local time is now:      Sat Apr 15 17:00:27 HST 2023.
+Universal Time is now:  Sun Apr 16 03:00:27 UTC 2023.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Setting up apparmor (2.13.3-7ubuntu5.2) ...
+Installing new version of config file /etc/apparmor/parser.conf ...
+Setting up vim-common (2:8.1.2269-1ubuntu5.13) ...
+Setting up udev (245.4-4ubuntu3.21) ...
+invoke-rc.d: could not determine current runlevel
+update-initramfs: deferring update (trigger activated)
+Setting up sudo (1.8.31-1ubuntu1.5) ...
+Setting up libk5crypto3:amd64 (1.17-6ubuntu4.3) ...
+Setting up python-apt-common (2.0.1ubuntu0.20.04.1) ...
+Setting up python3.8-minimal (3.8.10-0ubuntu1~20.04.7) ...
+Setting up isc-dhcp-common (4.4.1-2.1ubuntu5.20.04.5) ...
+Setting up libkrb5-3:amd64 (1.17-6ubuntu4.3) ...
+Setting up vim-runtime (2:8.1.2269-1ubuntu5.13) ...
+Setting up libpython3.8-stdlib:amd64 (3.8.10-0ubuntu1~20.04.7) ...
+Setting up python3.8 (3.8.10-0ubuntu1~20.04.7) ...
+Setting up rsync (3.1.3-8ubuntu0.5) ...
+invoke-rc.d: could not determine current runlevel
+Setting up bolt (0.9.1-2~ubuntu20.04.2) ...
+Setting up cloud-init (23.1.1-0ubuntu0~20.04.1) ...
+Installing new version of config file /etc/cloud/cloud.cfg ...
+Setting up python3-apt (2.0.1ubuntu0.20.04.1) ...
+Setting up update-notifier-common (3.192.30.17) ...
+Setting up vim-tiny (2:8.1.2269-1ubuntu5.13) ...
+Setting up python3-distupgrade (1:20.04.41) ...
+Setting up python3-apport (2.20.11-0ubuntu27.26) ...
+Setting up python3-software-properties (0.99.9.11) ...
+Setting up libpython3.8:amd64 (3.8.10-0ubuntu1~20.04.7) ...
+Setting up libgssapi-krb5-2:amd64 (1.17-6ubuntu4.3) ...
+Setting up ubuntu-release-upgrader-core (1:20.04.41) ...
+Setting up libcurl4:amd64 (7.68.0-1ubuntu2.18) ...
+Setting up curl (7.68.0-1ubuntu2.18) ...
+Setting up ubuntu-advantage-tools (27.13.6~20.04.1) ...
+Setting up vim (2:8.1.2269-1ubuntu5.13) ...
+Setting up bind9-libs:amd64 (1:9.16.1-0ubuntu2.14) ...
+Setting up libcurl3-gnutls:amd64 (7.68.0-1ubuntu2.18) ...
+Setting up software-properties-common (0.99.9.11) ...
+Setting up apport (2.20.11-0ubuntu27.26) ...
+invoke-rc.d: could not determine current runlevel
+Setting up bind9-host (1:9.16.1-0ubuntu2.14) ...
+Setting up bind9-dnsutils (1:9.16.1-0ubuntu2.14) ...
+Setting up systemd (245.4-4ubuntu3.21) ...
+Initializing machine ID from random generator.
+Setting up systemd-timesyncd (245.4-4ubuntu3.21) ...
+Setting up systemd-sysv (245.4-4ubuntu3.21) ...
+Setting up libnss-systemd:amd64 (245.4-4ubuntu3.21) ...
+Setting up libpam-systemd:amd64 (245.4-4ubuntu3.21) ...
+Processing triggers for install-info (6.7.0.dfsg.2-5) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+/sbin/ldconfig.real: /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link
+
+Processing triggers for rsyslog (8.2001.0-1ubuntu1.3) ...
+invoke-rc.d: could not determine current runlevel
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for plymouth-theme-ubuntu-text (0.9.4git20200323-0ubuntu6.2) ...
+update-initramfs: deferring update (trigger activated)
+Processing triggers for dbus (1.12.16-2ubuntu2.3) ...
+Processing triggers for initramfs-tools (0.136ubuntu6.7) ...
+harold@Strix:~$ source ~/.bashrc
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ sudo apt install python3-pip
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu build-essential cpp cpp-9 dpkg-dev fakeroot g++ g++-9 gcc gcc-9 gcc-9-base libalgorithm-diff-perl libalgorithm-diff-xs-perl
+  libalgorithm-merge-perl libasan5 libatomic1 libbinutils libc-dev-bin libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libdpkg-perl libexpat1-dev libfakeroot libfile-fcntllock-perl
+  libgcc-9-dev libgomp1 libisl22 libitm1 liblsan0 libmpc3 libpython3-dev libpython3.8-dev libquadmath0 libstdc++-9-dev libtsan0 libubsan1 linux-libc-dev make manpages-dev python-pip-whl
+  python3-dev python3-wheel python3.8-dev zlib1g-dev
+Suggested packages:
+  binutils-doc cpp-doc gcc-9-locales debian-keyring g++-multilib g++-9-multilib gcc-9-doc gcc-multilib autoconf automake libtool flex bison gdb gcc-doc gcc-9-multilib glibc-doc bzr
+  libstdc++-9-doc make-doc
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu build-essential cpp cpp-9 dpkg-dev fakeroot g++ g++-9 gcc gcc-9 gcc-9-base libalgorithm-diff-perl libalgorithm-diff-xs-perl
+  libalgorithm-merge-perl libasan5 libatomic1 libbinutils libc-dev-bin libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libdpkg-perl libexpat1-dev libfakeroot libfile-fcntllock-perl
+  libgcc-9-dev libgomp1 libisl22 libitm1 liblsan0 libmpc3 libpython3-dev libpython3.8-dev libquadmath0 libstdc++-9-dev libtsan0 libubsan1 linux-libc-dev make manpages-dev python-pip-whl
+  python3-dev python3-pip python3-wheel python3.8-dev zlib1g-dev
+0 upgraded, 50 newly installed, 0 to remove and 0 not upgraded.
+Need to get 52.2 MB of archives.
+After this operation, 228 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils-common amd64 2.34-6ubuntu1.4 [207 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libbinutils amd64 2.34-6ubuntu1.4 [474 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libctf-nobfd0 amd64 2.34-6ubuntu1.4 [47.2 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libctf0 amd64 2.34-6ubuntu1.4 [46.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.34-6ubuntu1.4 [1613 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils amd64 2.34-6ubuntu1.4 [3380 B]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libc-dev-bin amd64 2.31-0ubuntu9.9 [71.8 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-libc-dev amd64 5.4.0-146.163 [1127 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 libcrypt-dev amd64 1:4.4.10-10ubuntu4 [104 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libc6-dev amd64 2.31-0ubuntu9.9 [2519 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gcc-9-base amd64 9.4.0-1ubuntu1~20.04.1 [19.4 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/main amd64 libisl22 amd64 0.22.1-1 [592 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal/main amd64 libmpc3 amd64 1.1.0-1 [40.8 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 cpp-9 amd64 9.4.0-1ubuntu1~20.04.1 [7500 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal/main amd64 cpp amd64 4:9.3.0-1ubuntu2 [27.6 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcc1-0 amd64 10.3.0-1ubuntu1~20.04 [48.8 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgomp1 amd64 10.3.0-1ubuntu1~20.04 [102 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libitm1 amd64 10.3.0-1ubuntu1~20.04 [26.2 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libatomic1 amd64 10.3.0-1ubuntu1~20.04 [9284 B]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libasan5 amd64 9.4.0-1ubuntu1~20.04.1 [2751 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 liblsan0 amd64 10.3.0-1ubuntu1~20.04 [835 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libtsan0 amd64 10.3.0-1ubuntu1~20.04 [2009 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libubsan1 amd64 10.3.0-1ubuntu1~20.04 [784 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libquadmath0 amd64 10.3.0-1ubuntu1~20.04 [146 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgcc-9-dev amd64 9.4.0-1ubuntu1~20.04.1 [2359 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gcc-9 amd64 9.4.0-1ubuntu1~20.04.1 [8274 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal/main amd64 gcc amd64 4:9.3.0-1ubuntu2 [5208 B]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libstdc++-9-dev amd64 9.4.0-1ubuntu1~20.04.1 [1722 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 g++-9 amd64 9.4.0-1ubuntu1~20.04.1 [8420 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal/main amd64 g++ amd64 4:9.3.0-1ubuntu2 [1604 B]
+Get:31 http://archive.ubuntu.com/ubuntu focal/main amd64 make amd64 4.2.1-1.2 [162 kB]
+Get:32 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libdpkg-perl all 1.19.7ubuntu3.2 [231 kB]
+Get:33 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 dpkg-dev all 1.19.7ubuntu3.2 [679 kB]
+Get:34 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 build-essential amd64 12.8ubuntu1.1 [4664 B]
+Get:35 http://archive.ubuntu.com/ubuntu focal/main amd64 libfakeroot amd64 1.24-1 [25.7 kB]
+Get:36 http://archive.ubuntu.com/ubuntu focal/main amd64 fakeroot amd64 1.24-1 [62.6 kB]
+Get:37 http://archive.ubuntu.com/ubuntu focal/main amd64 libalgorithm-diff-perl all 1.19.03-2 [46.6 kB]
+Get:38 http://archive.ubuntu.com/ubuntu focal/main amd64 libalgorithm-diff-xs-perl amd64 0.04-6 [11.3 kB]
+Get:39 http://archive.ubuntu.com/ubuntu focal/main amd64 libalgorithm-merge-perl all 0.08-3 [12.0 kB]
+Get:40 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libexpat1-dev amd64 2.2.9-1ubuntu0.6 [116 kB]
+Get:41 http://archive.ubuntu.com/ubuntu focal/main amd64 libfile-fcntllock-perl amd64 0.22-3build4 [33.1 kB]
+Get:42 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-dev amd64 3.8.10-0ubuntu1~20.04.7 [3953 kB]
+Get:43 http://archive.ubuntu.com/ubuntu focal/main amd64 libpython3-dev amd64 3.8.2-0ubuntu2 [7236 B]
+Get:44 http://archive.ubuntu.com/ubuntu focal/main amd64 manpages-dev all 5.05-1 [2266 kB]
+Get:45 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 python-pip-whl all 20.0.2-5ubuntu1.8 [1805 kB]
+Get:46 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 zlib1g-dev amd64 1:1.2.11.dfsg-2ubuntu1.5 [155 kB]
+Get:47 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8-dev amd64 3.8.10-0ubuntu1~20.04.7 [514 kB]
+Get:48 http://archive.ubuntu.com/ubuntu focal/main amd64 python3-dev amd64 3.8.2-0ubuntu2 [1212 B]
+Get:49 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 python3-wheel all 0.34.2-1ubuntu0.1 [23.9 kB]
+Get:50 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 python3-pip all 20.0.2-5ubuntu1.8 [231 kB]
+Fetched 52.2 MB in 10s (5227 kB/s)
+Extracting templates from packages: 100%
+Selecting previously unselected package binutils-common:amd64.
+(Reading database ... 32676 files and directories currently installed.)
+Preparing to unpack .../00-binutils-common_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking binutils-common:amd64 (2.34-6ubuntu1.4) ...
+Selecting previously unselected package libbinutils:amd64.
+Preparing to unpack .../01-libbinutils_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking libbinutils:amd64 (2.34-6ubuntu1.4) ...
+Selecting previously unselected package libctf-nobfd0:amd64.
+Preparing to unpack .../02-libctf-nobfd0_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking libctf-nobfd0:amd64 (2.34-6ubuntu1.4) ...
+Selecting previously unselected package libctf0:amd64.
+Preparing to unpack .../03-libctf0_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking libctf0:amd64 (2.34-6ubuntu1.4) ...
+Selecting previously unselected package binutils-x86-64-linux-gnu.
+Preparing to unpack .../04-binutils-x86-64-linux-gnu_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu (2.34-6ubuntu1.4) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../05-binutils_2.34-6ubuntu1.4_amd64.deb ...
+Unpacking binutils (2.34-6ubuntu1.4) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../06-libc-dev-bin_2.31-0ubuntu9.9_amd64.deb ...
+Unpacking libc-dev-bin (2.31-0ubuntu9.9) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../07-linux-libc-dev_5.4.0-146.163_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (5.4.0-146.163) ...
+Selecting previously unselected package libcrypt-dev:amd64.
+Preparing to unpack .../08-libcrypt-dev_1%3a4.4.10-10ubuntu4_amd64.deb ...
+Unpacking libcrypt-dev:amd64 (1:4.4.10-10ubuntu4) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../09-libc6-dev_2.31-0ubuntu9.9_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.31-0ubuntu9.9) ...
+Selecting previously unselected package gcc-9-base:amd64.
+Preparing to unpack .../10-gcc-9-base_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking gcc-9-base:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package libisl22:amd64.
+Preparing to unpack .../11-libisl22_0.22.1-1_amd64.deb ...
+Unpacking libisl22:amd64 (0.22.1-1) ...
+Selecting previously unselected package libmpc3:amd64.
+Preparing to unpack .../12-libmpc3_1.1.0-1_amd64.deb ...
+Unpacking libmpc3:amd64 (1.1.0-1) ...
+Selecting previously unselected package cpp-9.
+Preparing to unpack .../13-cpp-9_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking cpp-9 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package cpp.
+Preparing to unpack .../14-cpp_4%3a9.3.0-1ubuntu2_amd64.deb ...
+Unpacking cpp (4:9.3.0-1ubuntu2) ...
+Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../15-libcc1-0_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libcc1-0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../16-libgomp1_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libgomp1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../17-libitm1_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libitm1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libatomic1:amd64.
+Preparing to unpack .../18-libatomic1_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libatomic1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libasan5:amd64.
+Preparing to unpack .../19-libasan5_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking libasan5:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../20-liblsan0_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking liblsan0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../21-libtsan0_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libtsan0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libubsan1:amd64.
+Preparing to unpack .../22-libubsan1_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libubsan1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../23-libquadmath0_10.3.0-1ubuntu1~20.04_amd64.deb ...
+Unpacking libquadmath0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Selecting previously unselected package libgcc-9-dev:amd64.
+Preparing to unpack .../24-libgcc-9-dev_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking libgcc-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package gcc-9.
+Preparing to unpack .../25-gcc-9_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking gcc-9 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../26-gcc_4%3a9.3.0-1ubuntu2_amd64.deb ...
+Unpacking gcc (4:9.3.0-1ubuntu2) ...
+Selecting previously unselected package libstdc++-9-dev:amd64.
+Preparing to unpack .../27-libstdc++-9-dev_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking libstdc++-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package g++-9.
+Preparing to unpack .../28-g++-9_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking g++-9 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../29-g++_4%3a9.3.0-1ubuntu2_amd64.deb ...
+Unpacking g++ (4:9.3.0-1ubuntu2) ...
+Selecting previously unselected package make.
+Preparing to unpack .../30-make_4.2.1-1.2_amd64.deb ...
+Unpacking make (4.2.1-1.2) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../31-libdpkg-perl_1.19.7ubuntu3.2_all.deb ...
+Unpacking libdpkg-perl (1.19.7ubuntu3.2) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../32-dpkg-dev_1.19.7ubuntu3.2_all.deb ...
+Unpacking dpkg-dev (1.19.7ubuntu3.2) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../33-build-essential_12.8ubuntu1.1_amd64.deb ...
+Unpacking build-essential (12.8ubuntu1.1) ...
+Selecting previously unselected package libfakeroot:amd64.
+Preparing to unpack .../34-libfakeroot_1.24-1_amd64.deb ...
+Unpacking libfakeroot:amd64 (1.24-1) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../35-fakeroot_1.24-1_amd64.deb ...
+Unpacking fakeroot (1.24-1) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../36-libalgorithm-diff-perl_1.19.03-2_all.deb ...
+Unpacking libalgorithm-diff-perl (1.19.03-2) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../37-libalgorithm-diff-xs-perl_0.04-6_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-6) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../38-libalgorithm-merge-perl_0.08-3_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-3) ...
+Selecting previously unselected package libexpat1-dev:amd64.
+Preparing to unpack .../39-libexpat1-dev_2.2.9-1ubuntu0.6_amd64.deb ...
+Unpacking libexpat1-dev:amd64 (2.2.9-1ubuntu0.6) ...
+Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../40-libfile-fcntllock-perl_0.22-3build4_amd64.deb ...
+Unpacking libfile-fcntllock-perl (0.22-3build4) ...
+Selecting previously unselected package libpython3.8-dev:amd64.
+Preparing to unpack .../41-libpython3.8-dev_3.8.10-0ubuntu1~20.04.7_amd64.deb ...
+Unpacking libpython3.8-dev:amd64 (3.8.10-0ubuntu1~20.04.7) ...
+Selecting previously unselected package libpython3-dev:amd64.
+Preparing to unpack .../42-libpython3-dev_3.8.2-0ubuntu2_amd64.deb ...
+Unpacking libpython3-dev:amd64 (3.8.2-0ubuntu2) ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../43-manpages-dev_5.05-1_all.deb ...
+Unpacking manpages-dev (5.05-1) ...
+Selecting previously unselected package python-pip-whl.
+Preparing to unpack .../44-python-pip-whl_20.0.2-5ubuntu1.8_all.deb ...
+Unpacking python-pip-whl (20.0.2-5ubuntu1.8) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../45-zlib1g-dev_1%3a1.2.11.dfsg-2ubuntu1.5_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu1.5) ...
+Selecting previously unselected package python3.8-dev.
+Preparing to unpack .../46-python3.8-dev_3.8.10-0ubuntu1~20.04.7_amd64.deb ...
+Unpacking python3.8-dev (3.8.10-0ubuntu1~20.04.7) ...
+Selecting previously unselected package python3-dev.
+Preparing to unpack .../47-python3-dev_3.8.2-0ubuntu2_amd64.deb ...
+Unpacking python3-dev (3.8.2-0ubuntu2) ...
+Selecting previously unselected package python3-wheel.
+Preparing to unpack .../48-python3-wheel_0.34.2-1ubuntu0.1_all.deb ...
+Unpacking python3-wheel (0.34.2-1ubuntu0.1) ...
+Selecting previously unselected package python3-pip.
+Preparing to unpack .../49-python3-pip_20.0.2-5ubuntu1.8_all.deb ...
+Unpacking python3-pip (20.0.2-5ubuntu1.8) ...
+Setting up manpages-dev (5.05-1) ...
+Setting up libfile-fcntllock-perl (0.22-3build4) ...
+Setting up libalgorithm-diff-perl (1.19.03-2) ...
+Setting up binutils-common:amd64 (2.34-6ubuntu1.4) ...
+Setting up linux-libc-dev:amd64 (5.4.0-146.163) ...
+Setting up libctf-nobfd0:amd64 (2.34-6ubuntu1.4) ...
+Setting up libgomp1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up python3-wheel (0.34.2-1ubuntu0.1) ...
+Setting up libfakeroot:amd64 (1.24-1) ...
+Setting up fakeroot (1.24-1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up make (4.2.1-1.2) ...
+Setting up libquadmath0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libmpc3:amd64 (1.1.0-1) ...
+Setting up libatomic1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libdpkg-perl (1.19.7ubuntu3.2) ...
+Setting up libubsan1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libcrypt-dev:amd64 (1:4.4.10-10ubuntu4) ...
+Setting up libisl22:amd64 (0.22.1-1) ...
+Setting up python-pip-whl (20.0.2-5ubuntu1.8) ...
+Setting up libbinutils:amd64 (2.34-6ubuntu1.4) ...
+Setting up libc-dev-bin (2.31-0ubuntu9.9) ...
+Setting up libalgorithm-diff-xs-perl (0.04-6) ...
+Setting up libcc1-0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up liblsan0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libitm1:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up gcc-9-base:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up libalgorithm-merge-perl (0.08-3) ...
+Setting up libtsan0:amd64 (10.3.0-1ubuntu1~20.04) ...
+Setting up libctf0:amd64 (2.34-6ubuntu1.4) ...
+Setting up libasan5:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up python3-pip (20.0.2-5ubuntu1.8) ...
+Setting up cpp-9 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up libc6-dev:amd64 (2.31-0ubuntu9.9) ...
+Setting up binutils-x86-64-linux-gnu (2.34-6ubuntu1.4) ...
+Setting up binutils (2.34-6ubuntu1.4) ...
+Setting up dpkg-dev (1.19.7ubuntu3.2) ...
+Setting up libgcc-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up libexpat1-dev:amd64 (2.2.9-1ubuntu0.6) ...
+Setting up libpython3.8-dev:amd64 (3.8.10-0ubuntu1~20.04.7) ...
+Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu1.5) ...
+Setting up cpp (4:9.3.0-1ubuntu2) ...
+Setting up gcc-9 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up libpython3-dev:amd64 (3.8.2-0ubuntu2) ...
+Setting up libstdc++-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up gcc (4:9.3.0-1ubuntu2) ...
+Setting up g++-9 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up python3.8-dev (3.8.10-0ubuntu1~20.04.7) ...
+Setting up g++ (4:9.3.0-1ubuntu2) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up build-essential (12.8ubuntu1.1) ...
+Setting up python3-dev (3.8.2-0ubuntu2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+/sbin/ldconfig.real: /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ pip install --upgrade pip
+Collecting pip
+  Downloading pip-23.1-py3-none-any.whl (2.1 MB)
+     |████████████████████████████████| 2.1 MB 962 kB/s
+Installing collected packages: pip
+  WARNING: The scripts pip, pip3, pip3.10 and pip3.8 are installed in '/home/harold/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed pip-23.1
+harold@Strix:~$ echo 'export PATH="$PATH:/home/harold/.local/bin"' >> ~/.bashrc
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+
+## Installing the NodeSource Node.js 16.x repo...
+
+
+## Populating apt-get cache...
+
++ apt-get update
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists... Done
+
+## Confirming "focal" is supported...
+
++ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_16.x/dists/focal/Release'
+
+## Adding the NodeSource signing key to your keyring...
+
++ curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee /usr/share/keyrings/nodesource.gpg >/dev/null
+
+## Creating apt sources list file for the NodeSource Node.js 16.x repo...
+
++ echo 'deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x focal main' > /etc/apt/sources.list.d/nodesource.list
++ echo 'deb-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x focal main' >> /etc/apt/sources.list.d/nodesource.list
+
+## Running `apt-get update` for you...
+
++ apt-get update
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Get:5 https://deb.nodesource.com/node_16.x focal InRelease [4583 B]
+Get:6 https://deb.nodesource.com/node_16.x focal/main amd64 Packages [777 B]
+Fetched 5360 B in 1s (4621 B/s)
+Reading package lists... Done
+
+## Run `sudo apt-get install -y nodejs` to install Node.js 16.x and npm
+## You may also need development tools to build native addons:
+     sudo apt-get install gcc g++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+     echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ sudo apt-get install -y nodejs
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  nodejs
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 27.2 MB of archives.
+After this operation, 128 MB of additional disk space will be used.
+Get:1 https://deb.nodesource.com/node_16.x focal/main amd64 nodejs amd64 16.19.1-deb-1nodesource1 [27.2 MB]
+Fetched 27.2 MB in 3s (9046 kB/s)
+Selecting previously unselected package nodejs.
+(Reading database ... 38789 files and directories currently installed.)
+Preparing to unpack .../nodejs_16.19.1-deb-1nodesource1_amd64.deb ...
+Unpacking nodejs (16.19.1-deb-1nodesource1) ...
+Setting up nodejs (16.19.1-deb-1nodesource1) ...
+Processing triggers for man-db (2.9.1-1) ...
+harold@Strix:~$ node -v
+v16.19.1
+harold@Strix:~$ npm -v
+8.19.3
+harold@Strix:~$ source ~/.bashrc
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:~$ cd /home/
+harold@Strix:/home$ sudo cp /mnt/c/users/harold/downloads/Miniconda3-latest-Linux-x86_64.sh /home/harold/
+[sudo] password for harold:
+harold@Strix:/home$ bash ~/Miniconda3-latest-Linux-x86_64.sh
+
+Welcome to Miniconda3 py310_23.1.0-1
+
+In order to continue the installation process, please review the license
+agreement.
+Please, press ENTER to continue
+>>>
+======================================
+End User License Agreement - Miniconda
+======================================
+
+Copyright 2015-2023, Anaconda, Inc.
+
+All rights reserved under the 3-clause BSD License:
+
+This End User License Agreement (the "Agreement") is a legal agreement between you and Anaconda, Inc. ("Anaconda") and governs your use of Miniconda.
+
+Subject to the terms of this Agreement, Anaconda hereby grants you a non-exclusive, non-transferable license to:
+
+  * Install and use the Miniconda,
+  * Modify and create derivative works of sample source code delivered in Miniconda subject to the Terms of Service for the Repository (as defined hereinafter) available at https://www.anaconda.com
+/terms-of-service, and
+  * Redistribute code files in source (if provided to you by Anaconda as source) and binary forms, with or without modification subject to the requirements set forth below.
+
+Anaconda may, at its option, make available patches, workarounds or other updates to Miniconda. Unless the updates are provided with their separate governing terms, they are deemed part of Minicond
+a licensed to you as provided in this Agreement. This Agreement does not entitle you to any support for Miniconda.
+
+Anaconda reserves all rights not expressly granted to you in this Agreement.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+  * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the dist
+ribution.
+  * Neither the name of Anaconda nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+You acknowledge that, as between you and Anaconda, Anaconda owns all right, title, and interest, including all intellectual property rights, in and to Miniconda and, with respect to third-party pro
+ducts distributed with or through Miniconda, the applicable third-party licensors own all right, title and interest, including all intellectual property rights, in and to such products. If you send
+ or transmit any communications or materials to Anaconda suggesting or recommending changes to the software or documentation, including without limitation, new features or functionality relating th
+ereto, or any comments, questions, suggestions or the like ("Feedback"), Anaconda is free to use such Feedback. You hereby assign to Anaconda all right, title, and interest in, and Anaconda is free
+ to use, without any attribution or compensation to any party, any ideas, know-how, concepts, techniques or other intellectual property rights contained in the Feedback, for any purpose whatsoever,
+ although Anaconda is not required to use any Feedback.
+
+DISCLAIMER
+==========
+
+THIS SOFTWARE IS PROVIDED BY ANACONDA AND ITS CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL ANACONDA BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMEN
+T OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, ANACONDA AND ITS AFFILIATES SHALL NOT BE LIABLE FOR ANY SPECIAL, INCIDENTAL, PUNITIVE OR CONSEQUENTIAL DAMAGES, OR ANY LOST PROFITS, LOSS OF USE, LOSS OF DAT
+A OR LOSS OF GOODWILL, OR THE COSTS OF PROCURING SUBSTITUTE PRODUCTS, ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT OR THE USE OR PERFORMANCE OF MINICONDA, WHETHER SUCH LIABILITY ARISES FROM
+ANY CLAIM BASED UPON BREACH OF CONTRACT, BREACH OF WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR ANY OTHER CAUSE OF ACTION OR THEORY OF LIABILITY. IN NO EVENT WILL THE TOTAL CUMULATIV
+E LIABILITY OF ANACONDA AND ITS AFFILIATES UNDER OR ARISING OUT OF THIS AGREEMENT EXCEED 10.00 U.S. DOLLARS.
+
+Miscellaneous
+=============
+
+If you want to terminate this Agreement, you may do so by discontinuing use of Miniconda. Anaconda may, at any time, terminate this Agreement and the license granted hereunder if you fail to comply
+ with any term of this Agreement. Upon any termination of this Agreement, you agree to promptly discontinue use of the Miniconda and destroy all copies in your possession or control. Upon any termi
+nation of this Agreement all provisions survive except for the licenses granted to you.
+
+This Agreement is governed by and construed in accordance with the internal laws of the State of Texas without giving effect to any choice or conflict of law provision or rule that would require or
+ permit the application of the laws of any jurisdiction other than those of the State of Texas. Any legal suit, action, or proceeding arising out of or related to this Agreement or the licenses gra
+nted hereunder by you must be instituted exclusively in the federal courts of the United States or the courts of the State of Texas in each case located in Travis County, Texas, and you irrevocably
+ submit to the jurisdiction of such courts in any such suit, action, or proceeding.
+
+Notice of Third Party Software Licenses
+=======================================
+
+Miniconda provides access to a repository (the "Repository") which contains software packages or tools licensed on an open source basis from third parties and binary packages of these third party t
+ools. These third party software packages or tools are provided on an "as is" basis and are subject to their respective license agreements as well as this Agreement and the Terms of Service for the
+ Repository located at https://www.anaconda.com/terms-of-service; provided, however, no restriction contained in the Terms of Service shall be construed so as to limit Your ability to download the
+packages contained in Miniconda provided you comply with the license for each such package. These licenses may be accessed from within the Miniconda software[1] or https://www.anaconda.com/legal. I
+nformation regarding which license is applicable is available from within many of the third party software packages and tools and at https://repo.anaconda.com/pkgs/main/ and https://repo.anaconda.c
+om/pkgs/r/. Anaconda reserves the right, in its sole discretion, to change which third party tools are included in the Repository accessible through Miniconda.
+
+
+Intel Math Kernel Library
+-------------------------
+
+Miniconda provides access to re-distributable, run-time, shared-library files from the Intel Math Kernel Library ("MKL binaries").
+
+Copyright 2018 Intel Corporation. License available at https://software.intel.com/en-us/license/intel-simplified-software-license (the "MKL License").
+
+You may use and redistribute the MKL binaries, without modification, provided the following conditions are met:
+
+  * Redistributions must reproduce the above copyright notice and the following terms of use in the MKL binaries and in the documentation and/or other materials provided with the distribution.
+  * Neither the name of Intel nor the names of its suppliers may be used to endorse or promote products derived from the MKL binaries without specific prior written permission.
+  * No reverse engineering, decompilation, or disassembly of the MKL binaries is permitted.
+
+You are specifically authorized to use and redistribute the MKL binaries with your installation of Miniconda subject to the terms set forth in the MKL License. You are also authorized to redistribu
+te the MKL binaries with Miniconda or in the Anaconda package that contains the MKL binaries. If needed, instructions for removing the MKL binaries after installation of Miniconda are available at
+https://docs.anaconda.com.
+
+cuDNN Software
+--------------
+
+Miniconda also provides access to cuDNN software binaries ("cuDNN binaries") from NVIDIA Corporation. You are specifically authorized to use the cuDNN binaries with your installation of Miniconda s
+ubject to your compliance with the license agreement located at https://docs.nvidia.com/deeplearning/sdk/cudnn-sla/index.html. You are also authorized to redistribute the cuDNN binaries with an Min
+iconda package that contains the cuDNN binaries. You can add or remove the cuDNN binaries utilizing the install and uninstall features in Miniconda.
+
+cuDNN binaries contain source code provided by NVIDIA Corporation.
+
+Arm Performance Libraries
+-------------------------
+
+Arm Performance Libraries (Free Version): Anaconda provides access to software and related documentation from the Arm Performance Libraries ("Arm PL") provided by Arm Limited. By installing or othe
+rwise accessing the Arm PL, you acknowledge and agree that use and distribution of the Arm PL is subject to your compliance with the Arm PL end user license agreement located at: https://developer.
+arm.com/tools-and-software/server-and-hpc/downloads/arm-performance-libraries/eula.
+
+Export; Cryptography Notice
+===========================
+
+You must comply with all domestic and international export laws and regulations that apply to the software, which include restrictions on destinations, end users, and end use. Miniconda includes cr
+yptographic software. The country in which you currently reside may have restrictions on the import, possession, use, and/or re-export to another country, of encryption software. BEFORE using any e
+ncryption software, please check your country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted. See the
+Wassenaar Arrangement http://www.wassenaar.org/ for more information.
+
+Anaconda has self-classified this software as Export Commodity Control Number (ECCN) EAR99, which includes mass market information security software using or performing cryptographic functions with
+ asymmetric algorithms. No license is required for export of this software to non-embargoed countries.
+
+The Intel Math Kernel Library contained in Miniconda is classified by Intel as ECCN 5D992.c with no license required for export to non-embargoed countries.
+
+The following packages listed on https://www.anaconda.com/cryptography are included in the Repository accessible through Miniconda that relate to cryptography.
+
+Last updated March 21, 2022
+
+
+Do you accept the license terms? [yes|no]
+[no] >>> yes
+
+Miniconda3 will now be installed into this location:
+/home/harold/miniconda3
+
+  - Press ENTER to confirm the location
+  - Press CTRL-C to abort the installation
+  - Or specify a different location below
+
+[/home/harold/miniconda3] >>>
+PREFIX=/home/harold/miniconda3
+Unpacking payload ...
+
+Installing base environment...
+
+
+Downloading and Extracting Packages
+
+
+Downloading and Extracting Packages
+
+Preparing transaction: done
+Executing transaction: done
+installation finished.
+Do you wish the installer to initialize Miniconda3
+by running conda init? [yes|no]
+[no] >>> yes
+no change     /home/harold/miniconda3/condabin/conda
+no change     /home/harold/miniconda3/bin/conda
+no change     /home/harold/miniconda3/bin/conda-env
+no change     /home/harold/miniconda3/bin/activate
+no change     /home/harold/miniconda3/bin/deactivate
+no change     /home/harold/miniconda3/etc/profile.d/conda.sh
+no change     /home/harold/miniconda3/etc/fish/conf.d/conda.fish
+no change     /home/harold/miniconda3/shell/condabin/Conda.psm1
+no change     /home/harold/miniconda3/shell/condabin/conda-hook.ps1
+no change     /home/harold/miniconda3/lib/python3.10/site-packages/xontrib/conda.xsh
+no change     /home/harold/miniconda3/etc/profile.d/conda.csh
+modified      /home/harold/.bashrc
+
+==> For changes to take effect, close and re-open your current shell. <==
+
+If you'd prefer that conda's base environment not be activated on startup,
+   set the auto_activate_base parameter to false:
+
+conda config --set auto_activate_base false
+
+Thank you for installing Miniconda3!
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+harold@Strix:/home$ which conda
+harold@Strix:/home$ /home/harold/miniconda3/bin/conda
+usage: conda [-h] [-V] command ...
+
+conda is a tool for managing and deploying applications, environments and packages.
+
+Options:
+
+positional arguments:
+  command
+    clean             Remove unused packages and caches.
+    compare           Compare packages between conda environments.
+    config            Modify configuration values in .condarc. This is modeled after the git config command. Writes to the user .condarc file (/home/harold/.condarc) by default. Use the --show-
+                      sources flag to display all identified configuration locations on your computer.
+    create            Create a new conda environment from a list of specified packages.
+    info              Display information about current conda install.
+    init              Initialize conda for shell interaction.
+    install           Installs a list of packages into a specified conda environment.
+    list              List installed packages in a conda environment.
+    package           Low-level conda package utility. (EXPERIMENTAL)
+    remove (uninstall)
+                      Remove a list of packages from a specified conda environment.
+    rename            Renames an existing environment.
+    run               Run an executable in a conda environment.
+    search            Search for packages and display associated information.The input is a MatchSpec, a query language for conda packages. See examples below.
+    update (upgrade)  Updates conda packages to the latest compatible version.
+    notices           Retrieves latest channel notifications.
+
+options:
+  -h, --help          Show this help message and exit.
+  -V, --version       Show the conda version number and exit.
+
+conda commands available from other packages (legacy):
+  content-trust
+  env
+harold@Strix:/home$ echo "export PATH=/home/harold/miniconda3/bin:$PATH" >> ~/.bashrc
+harold@Strix:/home$ source ~/.bashrc
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home$ sudo git clone --depth=1 --branch=main https://github.com/microsoft/JARVIS.git && sudo chown -R $USER:$USER JARVIS/
+Cloning into 'JARVIS'...
+remote: Enumerating objects: 86, done.
+remote: Counting objects: 100% (86/86), done.
+remote: Compressing objects: 100% (75/75), done.
+remote: Total 86 (delta 4), reused 68 (delta 2), pack-reused 0
+Unpacking objects: 100% (86/86), 2.27 MiB | 374.00 KiB/s, done.
+(base) harold@Strix:/home$ source ~/.bashrc
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home$ conda create -y -n jarvis python=3.8
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 23.1.0
+  latest version: 23.3.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+Or to minimize the number of packages updated during conda update use
+
+     conda install conda=23.3.1
+
+
+
+## Package Plan ##
+
+  environment location: /home/harold/miniconda3/envs/jarvis
+
+  added / updated specs:
+    - python=3.8
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    certifi-2022.12.7          |   py38h06a4308_0         150 KB
+    openssl-1.1.1t             |       h7f8727e_0         3.7 MB
+    pip-23.0.1                 |   py38h06a4308_0         2.5 MB
+    python-3.8.16              |       h7a1cb2a_3        23.7 MB
+    setuptools-65.6.3          |   py38h06a4308_0         1.1 MB
+    sqlite-3.41.2              |       h5eee18b_0         1.2 MB
+    wheel-0.38.4               |   py38h06a4308_0          63 KB
+    ------------------------------------------------------------
+                                           Total:        32.5 MB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main
+  _openmp_mutex      pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2023.01.10-h06a4308_0
+  certifi            pkgs/main/linux-64::certifi-2022.12.7-py38h06a4308_0
+  ld_impl_linux-64   pkgs/main/linux-64::ld_impl_linux-64-2.38-h1181459_1
+  libffi             pkgs/main/linux-64::libffi-3.4.2-h6a678d5_6
+  libgcc-ng          pkgs/main/linux-64::libgcc-ng-11.2.0-h1234567_1
+  libgomp            pkgs/main/linux-64::libgomp-11.2.0-h1234567_1
+  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-11.2.0-h1234567_1
+  ncurses            pkgs/main/linux-64::ncurses-6.4-h6a678d5_0
+  openssl            pkgs/main/linux-64::openssl-1.1.1t-h7f8727e_0
+  pip                pkgs/main/linux-64::pip-23.0.1-py38h06a4308_0
+  python             pkgs/main/linux-64::python-3.8.16-h7a1cb2a_3
+  readline           pkgs/main/linux-64::readline-8.2-h5eee18b_0
+  setuptools         pkgs/main/linux-64::setuptools-65.6.3-py38h06a4308_0
+  sqlite             pkgs/main/linux-64::sqlite-3.41.2-h5eee18b_0
+  tk                 pkgs/main/linux-64::tk-8.6.12-h1ccaba5_0
+  wheel              pkgs/main/linux-64::wheel-0.38.4-py38h06a4308_0
+  xz                 pkgs/main/linux-64::xz-5.2.10-h5eee18b_1
+  zlib               pkgs/main/linux-64::zlib-1.2.13-h5eee18b_0
+
+
+
+Downloading and Extracting Packages
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate jarvis
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+(base) harold@Strix:/home$ conda activate jarvis
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(jarvis) harold@Strix:/home$ conda update -n base -c defaults conda
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/harold/miniconda3
+
+  added / updated specs:
+    - conda
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    boltons-23.0.0             |  py310h06a4308_0         430 KB
+    conda-23.3.1               |  py310h06a4308_0         970 KB
+    cryptography-39.0.1        |  py310h9ce1e76_0         1.4 MB
+    jsonpatch-1.32             |     pyhd3eb1b0_0          15 KB
+    jsonpointer-2.1            |     pyhd3eb1b0_0           9 KB
+    packaging-23.0             |  py310h06a4308_0          68 KB
+    pyopenssl-23.0.0           |  py310h06a4308_0          97 KB
+    requests-2.28.1            |  py310h06a4308_1         100 KB
+    tqdm-4.65.0                |  py310h2f386ee_0         132 KB
+    tzdata-2023c               |       h04d1e81_0         116 KB
+    urllib3-1.26.15            |  py310h06a4308_0         199 KB
+    zstandard-0.19.0           |  py310h5eee18b_0         474 KB
+    ------------------------------------------------------------
+                                           Total:         4.0 MB
+
+The following NEW packages will be INSTALLED:
+
+  boltons            pkgs/main/linux-64::boltons-23.0.0-py310h06a4308_0
+  jsonpatch          pkgs/main/noarch::jsonpatch-1.32-pyhd3eb1b0_0
+  jsonpointer        pkgs/main/noarch::jsonpointer-2.1-pyhd3eb1b0_0
+  packaging          pkgs/main/linux-64::packaging-23.0-py310h06a4308_0
+
+The following packages will be UPDATED:
+
+  conda                              23.1.0-py310h06a4308_0 --> 23.3.1-py310h06a4308_0
+  cryptography                       38.0.4-py310h9ce1e76_0 --> 39.0.1-py310h9ce1e76_0
+  openssl                                 1.1.1s-h7f8727e_0 --> 1.1.1t-h7f8727e_0
+  pyopenssl          pkgs/main/noarch::pyopenssl-22.0.0-py~ --> pkgs/main/linux-64::pyopenssl-23.0.0-py310h06a4308_0
+  requests                           2.28.1-py310h06a4308_0 --> 2.28.1-py310h06a4308_1
+  sqlite                                  3.40.1-h5082296_0 --> 3.41.2-h5eee18b_0
+  tqdm                               4.64.1-py310h06a4308_0 --> 4.65.0-py310h2f386ee_0
+  tzdata                                   2022g-h04d1e81_0 --> 2023c-h04d1e81_0
+  urllib3                           1.26.14-py310h06a4308_0 --> 1.26.15-py310h06a4308_0
+  zstandard                          0.18.0-py310h5eee18b_0 --> 0.19.0-py310h5eee18b_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(jarvis) harold@Strix:/home$ conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/harold/miniconda3/envs/jarvis
+
+  added / updated specs:
+    - pytorch
+    - pytorch-cuda=11.7
+    - torchaudio
+    - torchvision
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    blas-1.0                   |              mkl           6 KB
+    brotlipy-0.7.0             |py38h27cfd23_1003         323 KB
+    cffi-1.15.1                |   py38h5eee18b_3         241 KB
+    cryptography-39.0.1        |   py38h9ce1e76_0         1.4 MB
+    cuda-cudart-11.7.99        |                0         194 KB  nvidia
+    cuda-cupti-11.7.101        |                0        22.9 MB  nvidia
+    cuda-libraries-11.7.1      |                0           1 KB  nvidia
+    cuda-nvrtc-11.7.99         |                0        17.3 MB  nvidia
+    cuda-nvtx-11.7.91          |                0          57 KB  nvidia
+    cuda-runtime-11.7.1        |                0           1 KB  nvidia
+    ffmpeg-4.3                 |       hf484d3e_0         9.9 MB  pytorch
+    filelock-3.9.0             |   py38h06a4308_0          18 KB
+    flit-core-3.8.0            |   py38h06a4308_0          84 KB
+    freetype-2.12.1            |       h4a9f257_0         626 KB
+    giflib-5.2.1               |       h5eee18b_3          80 KB
+    gmp-6.2.1                  |       h295c915_3         544 KB
+    gmpy2-2.1.2                |   py38heeb90bb_0         191 KB
+    gnutls-3.6.15              |       he1e5248_0         1.0 MB
+    idna-3.4                   |   py38h06a4308_0          93 KB
+    intel-openmp-2021.4.0      |    h06a4308_3561         4.2 MB
+    jinja2-3.1.2               |   py38h06a4308_0         211 KB
+    jpeg-9e                    |       h5eee18b_1         262 KB
+    lame-3.100                 |       h7b6447c_0         323 KB
+    lcms2-2.12                 |       h3be6417_0         312 KB
+    lerc-3.0                   |       h295c915_0         196 KB
+    libcublas-11.10.3.66       |                0       286.1 MB  nvidia
+    libcufft-10.7.2.124        |       h4fbf590_0        93.6 MB  nvidia
+    libcufile-1.6.0.25         |                0         763 KB  nvidia
+    libcurand-10.3.2.56        |                0        51.7 MB  nvidia
+    libcusolver-11.4.0.1       |                0        78.7 MB  nvidia
+    libcusparse-11.7.4.91      |                0       151.1 MB  nvidia
+    libdeflate-1.17            |       h5eee18b_0          69 KB
+    libiconv-1.16              |       h7f8727e_2         736 KB
+    libidn2-2.3.2              |       h7f8727e_0          81 KB
+    libnpp-11.7.4.75           |                0       129.3 MB  nvidia
+    libnvjpeg-11.8.0.2         |                0         2.2 MB  nvidia
+    libpng-1.6.39              |       h5eee18b_0         304 KB
+    libtasn1-4.19.0            |       h5eee18b_0          63 KB
+    libtiff-4.5.0              |       h6a678d5_2         479 KB
+    libunistring-0.9.10        |       h27cfd23_0         536 KB
+    libwebp-1.2.4              |       h11a3e52_1          86 KB
+    libwebp-base-1.2.4         |       h5eee18b_1         376 KB
+    lz4-c-1.9.4                |       h6a678d5_0         154 KB
+    markupsafe-2.1.1           |   py38h7f8727e_0          21 KB
+    mkl-2021.4.0               |     h06a4308_640       142.6 MB
+    mkl-service-2.4.0          |   py38h7f8727e_0          59 KB
+    mkl_fft-1.3.1              |   py38hd3c417c_0         180 KB
+    mkl_random-1.2.2           |   py38h51133e4_0         308 KB
+    mpc-1.1.0                  |       h10f8cd9_1          90 KB
+    mpfr-4.0.2                 |       hb69a4c5_1         487 KB
+    mpmath-1.2.1               |   py38h06a4308_0         766 KB
+    nettle-3.7.3               |       hbbd107a_1         809 KB
+    networkx-2.8.4             |   py38h06a4308_1         2.6 MB
+    numpy-1.23.5               |   py38h14f4228_0          10 KB
+    numpy-base-1.23.5          |   py38h31eccc5_0         6.7 MB
+    openh264-2.1.1             |       h4ff587b_0         711 KB
+    pillow-9.4.0               |   py38h6a678d5_0         723 KB
+    pyopenssl-23.0.0           |   py38h06a4308_0          96 KB
+    pysocks-1.7.1              |   py38h06a4308_0          31 KB
+    pytorch-2.0.0              |py3.8_cuda11.7_cudnn8.5.0_0        1.20 GB  pytorch
+    pytorch-cuda-11.7          |       h778d358_3           7 KB  pytorch
+    pytorch-mutex-1.0          |             cuda           3 KB  pytorch
+    requests-2.28.1            |   py38h06a4308_1          99 KB
+    sympy-1.11.1               |   py38h06a4308_0        11.7 MB
+    torchaudio-2.0.0           |       py38_cu117         7.5 MB  pytorch
+    torchtriton-2.0.0          |             py38        62.6 MB  pytorch
+    torchvision-0.15.0         |       py38_cu117        38.8 MB  pytorch
+    typing_extensions-4.4.0    |   py38h06a4308_0          46 KB
+    urllib3-1.26.15            |   py38h06a4308_0         197 KB
+    zstd-1.5.5                 |       hc292b87_0         647 KB
+    ------------------------------------------------------------
+                                           Total:        2.30 GB
+
+The following NEW packages will be INSTALLED:
+
+  blas               pkgs/main/linux-64::blas-1.0-mkl
+  brotlipy           pkgs/main/linux-64::brotlipy-0.7.0-py38h27cfd23_1003
+  bzip2              pkgs/main/linux-64::bzip2-1.0.8-h7b6447c_0
+  cffi               pkgs/main/linux-64::cffi-1.15.1-py38h5eee18b_3
+  charset-normalizer pkgs/main/noarch::charset-normalizer-2.0.4-pyhd3eb1b0_0
+  cryptography       pkgs/main/linux-64::cryptography-39.0.1-py38h9ce1e76_0
+  cuda-cudart        nvidia/linux-64::cuda-cudart-11.7.99-0
+  cuda-cupti         nvidia/linux-64::cuda-cupti-11.7.101-0
+  cuda-libraries     nvidia/linux-64::cuda-libraries-11.7.1-0
+  cuda-nvrtc         nvidia/linux-64::cuda-nvrtc-11.7.99-0
+  cuda-nvtx          nvidia/linux-64::cuda-nvtx-11.7.91-0
+  cuda-runtime       nvidia/linux-64::cuda-runtime-11.7.1-0
+  ffmpeg             pytorch/linux-64::ffmpeg-4.3-hf484d3e_0
+  filelock           pkgs/main/linux-64::filelock-3.9.0-py38h06a4308_0
+  flit-core          pkgs/main/linux-64::flit-core-3.8.0-py38h06a4308_0
+  freetype           pkgs/main/linux-64::freetype-2.12.1-h4a9f257_0
+  giflib             pkgs/main/linux-64::giflib-5.2.1-h5eee18b_3
+  gmp                pkgs/main/linux-64::gmp-6.2.1-h295c915_3
+  gmpy2              pkgs/main/linux-64::gmpy2-2.1.2-py38heeb90bb_0
+  gnutls             pkgs/main/linux-64::gnutls-3.6.15-he1e5248_0
+  idna               pkgs/main/linux-64::idna-3.4-py38h06a4308_0
+  intel-openmp       pkgs/main/linux-64::intel-openmp-2021.4.0-h06a4308_3561
+  jinja2             pkgs/main/linux-64::jinja2-3.1.2-py38h06a4308_0
+  jpeg               pkgs/main/linux-64::jpeg-9e-h5eee18b_1
+  lame               pkgs/main/linux-64::lame-3.100-h7b6447c_0
+  lcms2              pkgs/main/linux-64::lcms2-2.12-h3be6417_0
+  lerc               pkgs/main/linux-64::lerc-3.0-h295c915_0
+  libcublas          nvidia/linux-64::libcublas-11.10.3.66-0
+  libcufft           nvidia/linux-64::libcufft-10.7.2.124-h4fbf590_0
+  libcufile          nvidia/linux-64::libcufile-1.6.0.25-0
+  libcurand          nvidia/linux-64::libcurand-10.3.2.56-0
+  libcusolver        nvidia/linux-64::libcusolver-11.4.0.1-0
+  libcusparse        nvidia/linux-64::libcusparse-11.7.4.91-0
+  libdeflate         pkgs/main/linux-64::libdeflate-1.17-h5eee18b_0
+  libiconv           pkgs/main/linux-64::libiconv-1.16-h7f8727e_2
+  libidn2            pkgs/main/linux-64::libidn2-2.3.2-h7f8727e_0
+  libnpp             nvidia/linux-64::libnpp-11.7.4.75-0
+  libnvjpeg          nvidia/linux-64::libnvjpeg-11.8.0.2-0
+  libpng             pkgs/main/linux-64::libpng-1.6.39-h5eee18b_0
+  libtasn1           pkgs/main/linux-64::libtasn1-4.19.0-h5eee18b_0
+  libtiff            pkgs/main/linux-64::libtiff-4.5.0-h6a678d5_2
+  libunistring       pkgs/main/linux-64::libunistring-0.9.10-h27cfd23_0
+  libwebp            pkgs/main/linux-64::libwebp-1.2.4-h11a3e52_1
+  libwebp-base       pkgs/main/linux-64::libwebp-base-1.2.4-h5eee18b_1
+  lz4-c              pkgs/main/linux-64::lz4-c-1.9.4-h6a678d5_0
+  markupsafe         pkgs/main/linux-64::markupsafe-2.1.1-py38h7f8727e_0
+  mkl                pkgs/main/linux-64::mkl-2021.4.0-h06a4308_640
+  mkl-service        pkgs/main/linux-64::mkl-service-2.4.0-py38h7f8727e_0
+  mkl_fft            pkgs/main/linux-64::mkl_fft-1.3.1-py38hd3c417c_0
+  mkl_random         pkgs/main/linux-64::mkl_random-1.2.2-py38h51133e4_0
+  mpc                pkgs/main/linux-64::mpc-1.1.0-h10f8cd9_1
+  mpfr               pkgs/main/linux-64::mpfr-4.0.2-hb69a4c5_1
+  mpmath             pkgs/main/linux-64::mpmath-1.2.1-py38h06a4308_0
+  nettle             pkgs/main/linux-64::nettle-3.7.3-hbbd107a_1
+  networkx           pkgs/main/linux-64::networkx-2.8.4-py38h06a4308_1
+  numpy              pkgs/main/linux-64::numpy-1.23.5-py38h14f4228_0
+  numpy-base         pkgs/main/linux-64::numpy-base-1.23.5-py38h31eccc5_0
+  openh264           pkgs/main/linux-64::openh264-2.1.1-h4ff587b_0
+  pillow             pkgs/main/linux-64::pillow-9.4.0-py38h6a678d5_0
+  pycparser          pkgs/main/noarch::pycparser-2.21-pyhd3eb1b0_0
+  pyopenssl          pkgs/main/linux-64::pyopenssl-23.0.0-py38h06a4308_0
+  pysocks            pkgs/main/linux-64::pysocks-1.7.1-py38h06a4308_0
+  pytorch            pytorch/linux-64::pytorch-2.0.0-py3.8_cuda11.7_cudnn8.5.0_0
+  pytorch-cuda       pytorch/linux-64::pytorch-cuda-11.7-h778d358_3
+  pytorch-mutex      pytorch/noarch::pytorch-mutex-1.0-cuda
+  requests           pkgs/main/linux-64::requests-2.28.1-py38h06a4308_1
+  six                pkgs/main/noarch::six-1.16.0-pyhd3eb1b0_1
+  sympy              pkgs/main/linux-64::sympy-1.11.1-py38h06a4308_0
+  torchaudio         pytorch/linux-64::torchaudio-2.0.0-py38_cu117
+  torchtriton        pytorch/linux-64::torchtriton-2.0.0-py38
+  torchvision        pytorch/linux-64::torchvision-0.15.0-py38_cu117
+  typing_extensions  pkgs/main/linux-64::typing_extensions-4.4.0-py38h06a4308_0
+  urllib3            pkgs/main/linux-64::urllib3-1.26.15-py38h06a4308_0
+  zstd               pkgs/main/linux-64::zstd-1.5.5-hc292b87_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(jarvis) harold@Strix:/home$ sudo git clone https://github.com/lumaku/ctc-segmentation.git && sudo chown -R $USER:$USER ctc-segmentation
+Cloning into 'ctc-segmentation'...
+remote: Enumerating objects: 292, done.
+remote: Counting objects: 100% (53/53), done.
+remote: Compressing objects: 100% (29/29), done.
+remote: Total 292 (delta 25), reused 36 (delta 18), pack-reused 239
+Receiving objects: 100% (292/292), 284.80 KiB | 142.00 KiB/s, done.
+Resolving deltas: 100% (173/173), done.
+(jarvis) harold@Strix:/home$ source ~/.bashrc
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home$ cd /home/JARVIS/server/
+(base) harold@Strix:/home/JARVIS/server$ ls -l
+total 132
+-rw-r--r-- 1 harold harold 43085 Apr 15 17:41 awesome_chat.py
+-rw-r--r-- 1 harold harold  4301 Apr 15 17:41 config.gradio.yaml
+-rw-r--r-- 1 harold harold  4488 Apr 15 17:41 config.yaml
+drwxr-xr-x 2 harold harold  4096 Apr 15 17:41 data
+drwxr-xr-x 2 harold harold  4096 Apr 15 17:41 demos
+-rw-r--r-- 1 harold harold  2325 Apr 15 17:41 get_token_ids.py
+-rw-r--r-- 1 harold harold  4415 Apr 15 17:41 lite.yaml
+drwxr-xr-x 2 harold harold  4096 Apr 15 17:41 models
+-rw-r--r-- 1 harold harold 31342 Apr 15 17:41 models_server.py
+drwxr-xr-x 3 harold harold  4096 Apr 15 17:41 public
+-rw-r--r-- 1 harold harold   579 Apr 15 17:41 requirements.txt
+-rw-r--r-- 1 harold harold  4747 Apr 15 17:41 run_gradio_demo.py
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server$ pip install -r requirements.txt
+Collecting diffusers
+  Cloning https://github.com/huggingface/diffusers.git (to revision 8c530fc2f6a76a2aefb6b285dce6df1675092ac6) to /tmp/pip-install-pp1f7k2b/diffusers_d447759a46ec40f28d4dd1483b197793
+  Running command git clone --filter=blob:none --quiet https://github.com/huggingface/diffusers.git /tmp/pip-install-pp1f7k2b/diffusers_d447759a46ec40f28d4dd1483b197793
+  Running command git rev-parse -q --verify 'sha^8c530fc2f6a76a2aefb6b285dce6df1675092ac6'
+  Running command git fetch -q https://github.com/huggingface/diffusers.git 8c530fc2f6a76a2aefb6b285dce6df1675092ac6
+  Running command git checkout -q 8c530fc2f6a76a2aefb6b285dce6df1675092ac6
+  Resolved https://github.com/huggingface/diffusers.git to commit 8c530fc2f6a76a2aefb6b285dce6df1675092ac6
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting transformers
+  Cloning https://github.com/huggingface/transformers (to revision c612628045822f909020f7eb6784c79700813eda) to /tmp/pip-install-pp1f7k2b/transformers_a4ec16a8988d416aaca40a3789bdde3a
+  Running command git clone --filter=blob:none --quiet https://github.com/huggingface/transformers /tmp/pip-install-pp1f7k2b/transformers_a4ec16a8988d416aaca40a3789bdde3a
+  Running command git rev-parse -q --verify 'sha^c612628045822f909020f7eb6784c79700813eda'
+  Running command git fetch -q https://github.com/huggingface/transformers c612628045822f909020f7eb6784c79700813eda
+  Running command git checkout -q c612628045822f909020f7eb6784c79700813eda
+  Resolved https://github.com/huggingface/transformers to commit c612628045822f909020f7eb6784c79700813eda
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting controlnet_aux
+  Cloning https://github.com/patrickvonplaten/controlnet_aux (to revision 78efc716868a7f5669c288233d65b471f542ce40) to /tmp/pip-install-pp1f7k2b/controlnet-aux_5b53a5bdd98f49d38410848cbd23cea4
+  Running command git clone --filter=blob:none --quiet https://github.com/patrickvonplaten/controlnet_aux /tmp/pip-install-pp1f7k2b/controlnet-aux_5b53a5bdd98f49d38410848cbd23cea4
+  Running command git rev-parse -q --verify 'sha^78efc716868a7f5669c288233d65b471f542ce40'
+  Running command git fetch -q https://github.com/patrickvonplaten/controlnet_aux 78efc716868a7f5669c288233d65b471f542ce40
+  Running command git checkout -q 78efc716868a7f5669c288233d65b471f542ce40
+  Resolved https://github.com/patrickvonplaten/controlnet_aux to commit 78efc716868a7f5669c288233d65b471f542ce40
+  Preparing metadata (setup.py) ... done
+Collecting tiktoken==0.3.3
+  Downloading tiktoken-0.3.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 4.8 MB/s eta 0:00:00
+Collecting pydub==0.25.1
+  Downloading pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+Collecting espnet==202301
+  Downloading espnet-202301-py3-none-any.whl (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 9.4 MB/s eta 0:00:00
+Collecting espnet_model_zoo==0.1.7
+  Downloading espnet_model_zoo-0.1.7-py3-none-any.whl (19 kB)
+Collecting flask==2.2.3
+  Downloading Flask-2.2.3-py3-none-any.whl (101 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.8/101.8 kB 4.4 MB/s eta 0:00:00
+Collecting flask_cors==3.0.10
+  Downloading Flask_Cors-3.0.10-py2.py3-none-any.whl (14 kB)
+Collecting waitress==2.1.2
+  Downloading waitress-2.1.2-py3-none-any.whl (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.7/57.7 kB 2.7 MB/s eta 0:00:00
+Collecting datasets==2.11.0
+  Downloading datasets-2.11.0-py3-none-any.whl (468 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.7/468.7 kB 9.5 MB/s eta 0:00:00
+Collecting asteroid==0.6.0
+  Downloading asteroid-0.6.0-py3-none-any.whl (246 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 246.3/246.3 kB 7.4 MB/s eta 0:00:00
+Collecting speechbrain==0.5.14
+  Downloading speechbrain-0.5.14-py3-none-any.whl (519 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 519.0/519.0 kB 12.5 MB/s eta 0:00:00
+Collecting timm==0.6.13
+  Downloading timm-0.6.13-py3-none-any.whl (549 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 549.1/549.1 kB 7.1 MB/s eta 0:00:00
+Collecting typeguard==2.13.3
+  Downloading typeguard-2.13.3-py3-none-any.whl (17 kB)
+Collecting accelerate==0.18.0
+  Downloading accelerate-0.18.0-py3-none-any.whl (215 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 215.3/215.3 kB 5.9 MB/s eta 0:00:00
+Collecting pytesseract==0.3.10
+  Downloading pytesseract-0.3.10-py3-none-any.whl (14 kB)
+Collecting gradio==3.24.1
+  Downloading gradio-3.24.1-py3-none-any.whl (15.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 11.9 MB/s eta 0:00:00
+Requirement already satisfied: requests>=2.26.0 in /home/harold/miniconda3/lib/python3.10/site-packages (from tiktoken==0.3.3->-r requirements.txt (line 4)) (2.28.1)
+Collecting regex>=2022.1.18
+  Downloading regex-2023.3.23-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (769 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 769.6/769.6 kB 7.5 MB/s eta 0:00:00
+Collecting protobuf<=3.20.1
+  Downloading protobuf-3.20.1-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 8.2 MB/s eta 0:00:00
+Collecting sentencepiece
+  Downloading sentencepiece-0.1.98-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 8.9 MB/s eta 0:00:00
+Collecting importlib-metadata<5.0
+  Downloading importlib_metadata-4.13.0-py3-none-any.whl (23 kB)
+Collecting ci-sdr
+  Downloading ci_sdr-0.0.2.tar.gz (15 kB)
+  Preparing metadata (setup.py) ... done
+Collecting jamo==0.4.1
+  Downloading jamo-0.4.1-py3-none-any.whl (9.5 kB)
+Collecting pytorch-wpe
+  Downloading pytorch_wpe-0.0.1-py3-none-any.whl (8.1 kB)
+Collecting h5py>=2.10.0
+  Downloading h5py-3.8.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 12.5 MB/s eta 0:00:00
+Collecting filelock
+  Downloading filelock-3.11.0-py3-none-any.whl (10.0 kB)
+Collecting torch-complex
+  Downloading torch_complex-0.4.3-py3-none-any.whl (9.1 kB)
+Collecting numpy
+  Downloading numpy-1.24.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.3/17.3 MB 11.9 MB/s eta 0:00:00
+Collecting editdistance
+  Downloading editdistance-0.6.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (282 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 282.6/282.6 kB 10.3 MB/s eta 0:00:00
+Collecting pyworld>=0.2.10
+  Downloading pyworld-0.3.2.tar.gz (214 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 214.4/214.4 kB 4.5 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting kaldiio>=2.17.0
+  Downloading kaldiio-2.18.0-py3-none-any.whl (28 kB)
+Collecting fast-bss-eval==0.1.3
+  Downloading fast_bss_eval-0.1.3.tar.gz (33 kB)
+  Preparing metadata (setup.py) ... done
+Collecting soundfile>=0.10.2
+  Downloading soundfile-0.12.1-py2.py3-none-manylinux_2_31_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 9.2 MB/s eta 0:00:00
+Requirement already satisfied: setuptools>=38.5.1 in /home/harold/miniconda3/lib/python3.10/site-packages (from espnet==202301->-r requirements.txt (line 6)) (65.6.3)
+Requirement already satisfied: packaging in /home/harold/miniconda3/lib/python3.10/site-packages (from espnet==202301->-r requirements.txt (line 6)) (23.0)
+Collecting scipy>=1.4.1
+  Downloading scipy-1.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.4/34.4 MB 10.5 MB/s eta 0:00:00
+Collecting pypinyin<=0.44.0
+  Downloading pypinyin-0.44.0-py2.py3-none-any.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 9.1 MB/s eta 0:00:00
+Collecting espnet-tts-frontend
+  Downloading espnet_tts_frontend-0.0.3-py3-none-any.whl (11 kB)
+Collecting ctc-segmentation>=1.6.6
+  Downloading ctc_segmentation-1.7.4.tar.gz (73 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.6/73.6 kB 3.5 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting torch>=1.3.0
+  Downloading torch-2.0.0-cp310-cp310-manylinux1_x86_64.whl (619.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 619.9/619.9 MB 2.1 MB/s eta 0:00:00
+Collecting humanfriendly
+  Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 86.8/86.8 kB 3.3 MB/s eta 0:00:00
+Collecting configargparse>=1.2.1
+  Downloading ConfigArgParse-1.5.3-py3-none-any.whl (20 kB)
+Collecting hydra-core
+  Downloading hydra_core-1.3.2-py3-none-any.whl (154 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 154.5/154.5 kB 5.6 MB/s eta 0:00:00
+Collecting PyYAML>=5.1.2
+  Downloading PyYAML-6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (682 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 682.2/682.2 kB 7.1 MB/s eta 0:00:00
+Collecting nltk>=3.4.5
+  Downloading nltk-3.8.1-py3-none-any.whl (1.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 8.3 MB/s eta 0:00:00
+Collecting librosa>=0.8.0
+  Downloading librosa-0.10.0.post2-py3-none-any.whl (253 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 253.0/253.0 kB 7.0 MB/s eta 0:00:00
+Collecting opt-einsum
+  Downloading opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.5/65.5 kB 3.2 MB/s eta 0:00:00
+Collecting huggingface-hub
+  Downloading huggingface_hub-0.13.4-py3-none-any.whl (200 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.1/200.1 kB 6.9 MB/s eta 0:00:00
+Collecting pandas
+  Downloading pandas-2.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 11.6 MB/s eta 0:00:00
+Requirement already satisfied: tqdm in /home/harold/miniconda3/lib/python3.10/site-packages (from espnet_model_zoo==0.1.7->-r requirements.txt (line 7)) (4.65.0)
+Collecting itsdangerous>=2.0
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting Jinja2>=3.0
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 1.9 MB/s eta 0:00:00
+Collecting click>=8.0
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 2.1 MB/s eta 0:00:00
+Collecting Werkzeug>=2.2.2
+  Downloading Werkzeug-2.2.3-py3-none-any.whl (233 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.6/233.6 kB 9.4 MB/s eta 0:00:00
+Requirement already satisfied: Six in /home/harold/miniconda3/lib/python3.10/site-packages (from flask_cors==3.0.10->-r requirements.txt (line 9)) (1.16.0)
+Collecting responses<0.19
+  Downloading responses-0.18.0-py3-none-any.whl (38 kB)
+Collecting dill<0.3.7,>=0.3.0
+  Downloading dill-0.3.6-py3-none-any.whl (110 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 110.5/110.5 kB 7.1 MB/s eta 0:00:00
+Collecting aiohttp
+  Downloading aiohttp-3.8.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 9.2 MB/s eta 0:00:00
+Collecting fsspec[http]>=2021.11.1
+  Downloading fsspec-2023.4.0-py3-none-any.whl (153 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 154.0/154.0 kB 2.2 MB/s eta 0:00:00
+Collecting xxhash
+  Downloading xxhash-3.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (212 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 212.5/212.5 kB 7.2 MB/s eta 0:00:00
+Collecting pyarrow>=8.0.0
+  Downloading pyarrow-11.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.9/34.9 MB 9.7 MB/s eta 0:00:00
+Collecting multiprocess
+  Downloading multiprocess-0.70.14-py310-none-any.whl (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.3/134.3 kB 6.8 MB/s eta 0:00:00
+Collecting torchmetrics<0.8.0
+  Downloading torchmetrics-0.7.3-py3-none-any.whl (398 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 398.2/398.2 kB 9.9 MB/s eta 0:00:00
+Collecting torch-stoi>=0.1.2
+  Downloading torch_stoi-0.1.2.tar.gz (6.4 kB)
+  Preparing metadata (setup.py) ... done
+Collecting pb-bss-eval>=0.0.2
+  Downloading pb_bss_eval-0.0.2-py3-none-any.whl (14 kB)
+Collecting pytorch-lightning>=1.5.0
+  Downloading pytorch_lightning-2.0.1.post0-py3-none-any.whl (718 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 718.6/718.6 kB 7.6 MB/s eta 0:00:00
+Collecting asteroid-filterbanks>=0.4.0
+  Downloading asteroid_filterbanks-0.4.0-py3-none-any.whl (29 kB)
+Collecting torchaudio>=0.5.0
+  Downloading torchaudio-2.0.1-cp310-cp310-manylinux1_x86_64.whl (4.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 11.5 MB/s eta 0:00:00
+Collecting julius
+  Downloading julius-0.2.7.tar.gz (59 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.6/59.6 kB 1.8 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Collecting torch-optimizer<0.2.0,>=0.0.1a12
+  Downloading torch_optimizer-0.1.0-py3-none-any.whl (72 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 3.4 MB/s eta 0:00:00
+Collecting hyperpyyaml
+  Downloading HyperPyYAML-1.2.0-py3-none-any.whl (16 kB)
+Collecting joblib
+  Downloading joblib-1.2.0-py3-none-any.whl (297 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 298.0/298.0 kB 8.2 MB/s eta 0:00:00
+Collecting torchvision
+  Downloading torchvision-0.15.1-cp310-cp310-manylinux1_x86_64.whl (6.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 3.5 MB/s eta 0:00:00
+Collecting psutil
+  Downloading psutil-5.9.4-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 280.2/280.2 kB 10.8 MB/s eta 0:00:00
+Collecting Pillow>=8.0.0
+  Downloading Pillow-9.5.0-cp310-cp310-manylinux_2_28_x86_64.whl (3.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 10.6 MB/s eta 0:00:00
+Collecting ffmpy
+  Downloading ffmpy-0.3.0.tar.gz (4.8 kB)
+  Preparing metadata (setup.py) ... done
+Collecting pydantic
+  Downloading pydantic-1.10.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 9.9 MB/s eta 0:00:00
+Collecting matplotlib
+  Downloading matplotlib-3.7.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 11.1 MB/s eta 0:00:00
+Collecting markupsafe
+  Downloading MarkupSafe-2.1.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Collecting altair>=4.2.0
+  Downloading altair-4.2.2-py3-none-any.whl (813 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 813.6/813.6 kB 8.1 MB/s eta 0:00:00
+Collecting orjson
+  Downloading orjson-3.8.10-cp310-cp310-manylinux_2_28_x86_64.whl (140 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.6/140.6 kB 4.1 MB/s eta 0:00:00
+Collecting fastapi
+  Downloading fastapi-0.95.1-py3-none-any.whl (56 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.0/57.0 kB 2.5 MB/s eta 0:00:00
+Collecting markdown-it-py[linkify]>=2.0.0
+  Downloading markdown_it_py-2.2.0-py3-none-any.whl (84 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 84.5/84.5 kB 2.6 MB/s eta 0:00:00
+Collecting websockets>=10.0
+  Downloading websockets-11.0.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (129 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 5.1 MB/s eta 0:00:00
+Collecting semantic-version
+  Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+Collecting gradio-client>=0.0.5
+  Downloading gradio_client-0.1.3-py3-none-any.whl (286 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 286.2/286.2 kB 8.8 MB/s eta 0:00:00
+Collecting python-multipart
+  Downloading python_multipart-0.0.6-py3-none-any.whl (45 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.7/45.7 kB 1.8 MB/s eta 0:00:00
+Collecting aiofiles
+  Downloading aiofiles-23.1.0-py3-none-any.whl (14 kB)
+Collecting mdit-py-plugins<=0.3.3
+  Downloading mdit_py_plugins-0.3.3-py3-none-any.whl (50 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.5/50.5 kB 2.3 MB/s eta 0:00:00
+Collecting httpx
+  Downloading httpx-0.24.0-py3-none-any.whl (75 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.3/75.3 kB 1.2 MB/s eta 0:00:00
+Collecting uvicorn
+  Downloading uvicorn-0.21.1-py3-none-any.whl (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.8/57.8 kB 4.3 MB/s eta 0:00:00
+Collecting typing-extensions
+  Downloading typing_extensions-4.5.0-py3-none-any.whl (27 kB)
+Collecting tokenizers!=0.11.3,<0.14,>=0.11.1
+  Downloading tokenizers-0.13.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (7.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.8/7.8 MB 11.9 MB/s eta 0:00:00
+Collecting opencv-python
+  Downloading opencv_python-4.7.0.72-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (61.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.8/61.8 MB 6.8 MB/s eta 0:00:00
+Collecting einops
+  Downloading einops-0.6.0-py3-none-any.whl (41 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.6/41.6 kB 1.2 MB/s eta 0:00:00
+Collecting entrypoints
+  Downloading entrypoints-0.4-py3-none-any.whl (5.3 kB)
+Collecting jsonschema>=3.0
+  Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.4/90.4 kB 1.3 MB/s eta 0:00:00
+Requirement already satisfied: toolz in /home/harold/miniconda3/lib/python3.10/site-packages (from altair>=4.2.0->gradio==3.24.1->-r requirements.txt (line 18)) (0.12.0)
+Collecting Cython
+  Using cached Cython-0.29.34-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (1.9 MB)
+Collecting yarl<2.0,>=1.0
+  Downloading yarl-1.8.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (264 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 264.0/264.0 kB 3.8 MB/s eta 0:00:00
+Collecting aiosignal>=1.1.2
+  Downloading aiosignal-1.3.1-py3-none-any.whl (7.6 kB)
+Collecting frozenlist>=1.1.1
+  Downloading frozenlist-1.3.3-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (149 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 149.6/149.6 kB 3.9 MB/s eta 0:00:00
+Collecting async-timeout<5.0,>=4.0.0a3
+  Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
+Collecting attrs>=17.3.0
+  Downloading attrs-22.2.0-py3-none-any.whl (60 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 702.2 kB/s eta 0:00:00
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in /home/harold/miniconda3/lib/python3.10/site-packages (from aiohttp->datasets==2.11.0->-r requirements.txt (line 11)) (2.0.4)
+Collecting multidict<7.0,>=4.5
+  Downloading multidict-6.0.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (114 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.5/114.5 kB 4.9 MB/s eta 0:00:00
+Collecting zipp>=0.5
+  Downloading zipp-3.15.0-py3-none-any.whl (6.8 kB)
+Collecting soxr>=0.3.2
+  Downloading soxr-0.3.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 8.9 MB/s eta 0:00:00
+Collecting numba>=0.51.0
+  Downloading numba-0.56.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.5/3.5 MB 11.4 MB/s eta 0:00:00
+Collecting pooch<1.7,>=1.0
+  Downloading pooch-1.6.0-py3-none-any.whl (56 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 kB 3.9 MB/s eta 0:00:00
+Collecting lazy-loader>=0.1
+  Downloading lazy_loader-0.2-py3-none-any.whl (8.6 kB)
+Collecting msgpack>=1.0
+  Downloading msgpack-1.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (316 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 316.8/316.8 kB 7.1 MB/s eta 0:00:00
+Collecting audioread>=2.1.9
+  Downloading audioread-3.0.0.tar.gz (377 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 377.0/377.0 kB 10.5 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Collecting decorator>=4.3.0
+  Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)
+Collecting scikit-learn>=0.20.0
+  Downloading scikit_learn-1.2.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (9.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 8.9 MB/s eta 0:00:00
+Collecting mdurl~=0.1
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting linkify-it-py<3,>=1
+  Downloading linkify_it_py-2.0.0-py3-none-any.whl (19 kB)
+Collecting pytz>=2020.1
+  Downloading pytz-2023.3-py2.py3-none-any.whl (502 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 502.3/502.3 kB 13.3 MB/s eta 0:00:00
+Collecting python-dateutil>=2.8.2
+  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 9.7 MB/s eta 0:00:00
+Collecting tzdata>=2022.1
+  Downloading tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 341.8/341.8 kB 4.5 MB/s eta 0:00:00
+Collecting pesq
+  Downloading pesq-0.0.4.tar.gz (38 kB)
+  Preparing metadata (setup.py) ... done
+Collecting cached-property
+  Downloading cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
+Collecting pystoi
+  Downloading pystoi-0.3.3.tar.gz (7.0 kB)
+  Preparing metadata (setup.py) ... done
+Collecting mir-eval
+  Downloading mir_eval-0.7.tar.gz (90 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.7/90.7 kB 3.0 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Collecting lightning-utilities>=0.7.0
+  Downloading lightning_utilities-0.8.0-py3-none-any.whl (20 kB)
+Requirement already satisfied: idna<4,>=2.5 in /home/harold/miniconda3/lib/python3.10/site-packages (from requests>=2.26.0->tiktoken==0.3.3->-r requirements.txt (line 4)) (3.4)
+Requirement already satisfied: certifi>=2017.4.17 in /home/harold/miniconda3/lib/python3.10/site-packages (from requests>=2.26.0->tiktoken==0.3.3->-r requirements.txt (line 4)) (2022.12.7)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /home/harold/miniconda3/lib/python3.10/site-packages (from requests>=2.26.0->tiktoken==0.3.3->-r requirements.txt (line 4)) (1.26.15)
+Requirement already satisfied: cffi>=1.0 in /home/harold/miniconda3/lib/python3.10/site-packages (from soundfile>=0.10.2->espnet==202301->-r requirements.txt (line 6)) (1.15.1)
+Collecting nvidia-cusparse-cu11==11.7.4.91
+  Downloading nvidia_cusparse_cu11-11.7.4.91-py3-none-manylinux1_x86_64.whl (173.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 173.2/173.2 MB 4.4 MB/s eta 0:00:00
+Collecting sympy
+  Downloading sympy-1.11.1-py3-none-any.whl (6.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.5/6.5 MB 13.7 MB/s eta 0:00:00
+Collecting nvidia-cuda-runtime-cu11==11.7.99
+  Downloading nvidia_cuda_runtime_cu11-11.7.99-py3-none-manylinux1_x86_64.whl (849 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.3/849.3 kB 9.1 MB/s eta 0:00:00
+Collecting triton==2.0.0
+  Downloading triton-2.0.0-1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (63.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.3/63.3 MB 8.7 MB/s eta 0:00:00
+Collecting nvidia-nccl-cu11==2.14.3
+  Downloading nvidia_nccl_cu11-2.14.3-py3-none-manylinux1_x86_64.whl (177.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 177.1/177.1 MB 4.1 MB/s eta 0:00:00
+Collecting nvidia-cuda-cupti-cu11==11.7.101
+  Downloading nvidia_cuda_cupti_cu11-11.7.101-py3-none-manylinux1_x86_64.whl (11.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.8/11.8 MB 13.3 MB/s eta 0:00:00
+Collecting nvidia-curand-cu11==10.2.10.91
+  Downloading nvidia_curand_cu11-10.2.10.91-py3-none-manylinux1_x86_64.whl (54.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.6/54.6 MB 9.3 MB/s eta 0:00:00
+Collecting nvidia-cusolver-cu11==11.4.0.1
+  Downloading nvidia_cusolver_cu11-11.4.0.1-2-py3-none-manylinux1_x86_64.whl (102.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.6/102.6 MB 5.9 MB/s eta 0:00:00
+Collecting nvidia-cudnn-cu11==8.5.0.96
+  Downloading nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl (557.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.1/557.1 MB 2.0 MB/s eta 0:00:00
+Collecting nvidia-nvtx-cu11==11.7.91
+  Downloading nvidia_nvtx_cu11-11.7.91-py3-none-manylinux1_x86_64.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.6/98.6 kB 3.6 MB/s eta 0:00:00
+Collecting nvidia-cuda-nvrtc-cu11==11.7.99
+  Downloading nvidia_cuda_nvrtc_cu11-11.7.99-2-py3-none-manylinux1_x86_64.whl (21.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.0/21.0 MB 10.9 MB/s eta 0:00:00
+Collecting nvidia-cufft-cu11==10.9.0.58
+  Downloading nvidia_cufft_cu11-10.9.0.58-py3-none-manylinux1_x86_64.whl (168.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 168.4/168.4 MB 3.6 MB/s eta 0:00:00
+Collecting networkx
+  Downloading networkx-3.1-py3-none-any.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 10.2 MB/s eta 0:00:00
+Collecting nvidia-cublas-cu11==11.10.3.66
+  Downloading nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl (317.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 317.1/317.1 MB 3.3 MB/s eta 0:00:00
+Requirement already satisfied: wheel in /home/harold/miniconda3/lib/python3.10/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch>=1.3.0->espnet==202301->-r requirements.txt (line 6)) (0.37.1)
+Collecting cmake
+  Downloading cmake-3.26.3-py2.py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (24.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.0/24.0 MB 11.3 MB/s eta 0:00:00
+Collecting lit
+  Downloading lit-16.0.1.tar.gz (137 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.9/137.9 kB 4.7 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Collecting pytorch-ranger>=0.1.1
+  Downloading pytorch_ranger-0.1.1-py3-none-any.whl (14 kB)
+Collecting pyDeprecate==0.3.*
+  Downloading pyDeprecate-0.3.2-py3-none-any.whl (10 kB)
+Collecting jaconv
+  Downloading jaconv-0.3.4.tar.gz (16 kB)
+  Preparing metadata (setup.py) ... done
+Collecting unidecode>=1.0.22
+  Downloading Unidecode-1.3.6-py3-none-any.whl (235 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 235.9/235.9 kB 3.5 MB/s eta 0:00:00
+Collecting inflect>=1.0.0
+  Downloading inflect-6.0.4-py3-none-any.whl (34 kB)
+Collecting g2p-en
+  Downloading g2p_en-2.1.0-py3-none-any.whl (3.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 12.1 MB/s eta 0:00:00
+Collecting starlette<0.27.0,>=0.26.1
+  Downloading starlette-0.26.1-py3-none-any.whl (66 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.9/66.9 kB 3.2 MB/s eta 0:00:00
+Collecting httpcore<0.18.0,>=0.15.0
+  Downloading httpcore-0.17.0-py3-none-any.whl (70 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.6/70.6 kB 3.3 MB/s eta 0:00:00
+Collecting sniffio
+  Downloading sniffio-1.3.0-py3-none-any.whl (10 kB)
+Collecting omegaconf<2.4,>=2.2
+  Downloading omegaconf-2.3.0-py3-none-any.whl (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 2.4 MB/s eta 0:00:00
+Collecting antlr4-python3-runtime==4.9.*
+  Downloading antlr4-python3-runtime-4.9.3.tar.gz (117 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.0/117.0 kB 4.8 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: ruamel.yaml>=0.17.8 in /home/harold/miniconda3/lib/python3.10/site-packages (from hyperpyyaml->speechbrain==0.5.14->-r requirements.txt (line 13)) (0.17.21)
+Collecting cycler>=0.10
+  Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+Collecting kiwisolver>=1.0.1
+  Downloading kiwisolver-1.4.4-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 11.3 MB/s eta 0:00:00
+Collecting contourpy>=1.0.1
+  Downloading contourpy-1.0.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (300 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 300.3/300.3 kB 7.2 MB/s eta 0:00:00
+Collecting fonttools>=4.22.0
+  Downloading fonttools-4.39.3-py3-none-any.whl (1.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 8.6 MB/s eta 0:00:00
+Collecting pyparsing>=2.3.1
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 3.5 MB/s eta 0:00:00
+Collecting h11>=0.8
+  Downloading h11-0.14.0-py3-none-any.whl (58 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.3/58.3 kB 1.8 MB/s eta 0:00:00
+Requirement already satisfied: pycparser in /home/harold/miniconda3/lib/python3.10/site-packages (from cffi>=1.0->soundfile>=0.10.2->espnet==202301->-r requirements.txt (line 6)) (2.21)
+Collecting anyio<5.0,>=3.0
+  Downloading anyio-3.6.2-py3-none-any.whl (80 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.6/80.6 kB 82.5 kB/s eta 0:00:00
+Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0
+  Downloading pyrsistent-0.19.3-py3-none-any.whl (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 kB 1.8 MB/s eta 0:00:00
+Collecting uc-micro-py
+  Downloading uc_micro_py-1.0.1-py3-none-any.whl (6.2 kB)
+Collecting llvmlite<0.40,>=0.39.0dev0
+  Downloading llvmlite-0.39.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.6/34.6 MB 10.1 MB/s eta 0:00:00
+Collecting numpy
+  Downloading numpy-1.23.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.1/17.1 MB 11.7 MB/s eta 0:00:00
+Collecting appdirs>=1.3.0
+  Downloading appdirs-1.4.4-py2.py3-none-any.whl (9.6 kB)
+Requirement already satisfied: ruamel.yaml.clib>=0.2.6 in /home/harold/miniconda3/lib/python3.10/site-packages (from ruamel.yaml>=0.17.8->hyperpyyaml->speechbrain==0.5.14->-r requirements.txt (line 13)) (0.2.6)
+Collecting threadpoolctl>=2.0.0
+  Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
+Collecting distance>=0.1.3
+  Downloading Distance-0.1.3.tar.gz (180 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 180.3/180.3 kB 11.1 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Collecting future
+  Downloading future-0.18.3.tar.gz (840 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 840.9/840.9 kB 8.0 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Collecting mpmath>=0.19
+  Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 9.6 MB/s eta 0:00:00
+Building wheels for collected packages: fast-bss-eval, diffusers, transformers, controlnet_aux, ctc-segmentation, pyworld, torch-stoi, ci-sdr, ffmpy, antlr4-python3-runtime, julius, audioread, jaconv, mir-eval, pesq, pystoi, distance, future, lit
+  Building wheel for fast-bss-eval (setup.py) ... done
+  Created wheel for fast-bss-eval: filename=fast_bss_eval-0.1.3-py3-none-any.whl size=44241 sha256=e9ffb27475e376450497c766dc63066cd0568bbac9742893fd9b75a331dc9ad1
+  Stored in directory: /home/harold/.cache/pip/wheels/81/64/a2/d147029e4bc748b720ce2f22fca8ef137c1b920e5815a85ebc
+  Building wheel for diffusers (pyproject.toml) ... done
+  Created wheel for diffusers: filename=diffusers-0.15.0.dev0-py3-none-any.whl size=827778 sha256=5e5936e3c8858d0bf5ec3fc2449231e6378b25c4ec91b051ca7bbdb7a80b889e
+  Stored in directory: /home/harold/.cache/pip/wheels/97/46/53/d2f02bfbb5932e8b71fc54b3d3c0fdc80812344ded7b5cb43c
+  Building wheel for transformers (pyproject.toml) ... done
+  Created wheel for transformers: filename=transformers-4.28.0.dev0-py3-none-any.whl size=6858413 sha256=b0d540e01d224e061ca0036b101efce80d6db6a22d809f21e6c6b351f3db58f4
+  Stored in directory: /home/harold/.cache/pip/wheels/b0/2d/01/1c6e245727fa20c026ce55a2a28348299c67051e0e50eb094b
+  Building wheel for controlnet_aux (setup.py) ... done
+  Created wheel for controlnet_aux: filename=controlnet_aux-0.0.1-py3-none-any.whl size=44081 sha256=9c41f60574c81e0ada3a6d6d40061f4a7b5cd4f7dd5c1b666839966a480031ea
+  Stored in directory: /home/harold/.cache/pip/wheels/5f/64/0b/eff587a5b3f812602b0c7c8ab3d91714d442a64cf212f548b0
+  Building wheel for ctc-segmentation (pyproject.toml) ... done
+  Created wheel for ctc-segmentation: filename=ctc_segmentation-1.7.4-cp310-cp310-linux_x86_64.whl size=43219 sha256=4db8e763bd6e53d412c471a4f5dcf0fc8187ff9307e185a368bc6c86a9384d97
+  Stored in directory: /home/harold/.cache/pip/wheels/a9/de/0c/6f4da2fc6b001f292c69966bfbf5d53ee7e9b186fbb26f870a
+  Building wheel for pyworld (pyproject.toml) ... done
+  Created wheel for pyworld: filename=pyworld-0.3.2-cp310-cp310-linux_x86_64.whl size=206668 sha256=2b6e07f585d91f7ef3453e442039b3bc8d9cc6d9aa622b015dd504060d8aa871
+  Stored in directory: /home/harold/.cache/pip/wheels/0f/92/be/64f9607812253ef82c9e11cb26c3a79a042e5f12b4b72f26fa
+  Building wheel for torch-stoi (setup.py) ... done
+  Created wheel for torch-stoi: filename=torch_stoi-0.1.2-py3-none-any.whl size=6184 sha256=d56cd0dfe964e24e316613a4cc0832ae5d405736e15cfd1b3e81f9312932d52e
+  Stored in directory: /home/harold/.cache/pip/wheels/0d/3a/ea/1b6708111a80d4c27d3ce6296d4982ffe4b733febe529cda65
+  Building wheel for ci-sdr (setup.py) ... done
+  Created wheel for ci-sdr: filename=ci_sdr-0.0.2-py3-none-any.whl size=15258 sha256=83a7cd1e475c8a1219aedb0057f35cb8e192e77575f05436edb3374a8974b2ab
+  Stored in directory: /home/harold/.cache/pip/wheels/77/1e/f2/1609c2562a5ca8acc4437445d567ac1f6549b49f5798d6b8ac
+  Building wheel for ffmpy (setup.py) ... done
+  Created wheel for ffmpy: filename=ffmpy-0.3.0-py3-none-any.whl size=4693 sha256=cf38368163e4583b821703e366d4912ab4b29dcfef894e92252122edb0abc789
+  Stored in directory: /home/harold/.cache/pip/wheels/fe/17/e9/577da024bc5aede641c69f0675254c1e518db79800abbe135c
+  Building wheel for antlr4-python3-runtime (setup.py) ... done
+  Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=144554 sha256=39621c7a4c954201e8ae50ab28d77ef03dbc52d6e5a5e11e8b50c5d4f0c4d441
+  Stored in directory: /home/harold/.cache/pip/wheels/48/6a/c2/acb58c7afdf57e4cddf5e1513f5a2d62aa8e98f82a00c76d7c
+  Building wheel for julius (setup.py) ... done
+  Created wheel for julius: filename=julius-0.2.7-py3-none-any.whl size=21878 sha256=2deb820d4b6a8f0c24a62fbf8550fe2937519c6a1355c48f62b05777644eff11
+  Stored in directory: /home/harold/.cache/pip/wheels/77/2f/b9/af02b53fa9ec38594c58f905e206bc6de9628d96807c133130
+  Building wheel for audioread (setup.py) ... done
+  Created wheel for audioread: filename=audioread-3.0.0-py3-none-any.whl size=23703 sha256=9178244b963db3a2eb4717faf4c0c8e7620b188ee89004ebcd9cc51d23b644f8
+  Stored in directory: /home/harold/.cache/pip/wheels/3d/e0/4b/51b8aa4a0e2b6361c14943f7a7c2c7adb7b9cd419e0a1b720d
+  Building wheel for jaconv (setup.py) ... done
+  Created wheel for jaconv: filename=jaconv-0.3.4-py3-none-any.whl size=16416 sha256=5c8a407b5c0df516312add1bb120d432befdf2db46fd0bbd0d6bff9dba50adb5
+  Stored in directory: /home/harold/.cache/pip/wheels/c2/45/0d/59f69167effc32def3fe22f64eebef0dd837f55a870fc30fd9
+  Building wheel for mir-eval (setup.py) ... done
+  Created wheel for mir-eval: filename=mir_eval-0.7-py3-none-any.whl size=100707 sha256=e15c7ce35d735ea6c6ad6430aa0e6a513c0d8f665d04978fb94a6e77403e5293
+  Stored in directory: /home/harold/.cache/pip/wheels/55/17/c9/243e8a453227a6aa60ad94e656b200d6c97bba4630a9edf663
+  Building wheel for pesq (setup.py) ... done
+  Created wheel for pesq: filename=pesq-0.0.4-cp310-cp310-linux_x86_64.whl size=108996 sha256=ed3af72860263d8e3ea3766658633f05cc7c0fbffd293b2e0a8fc2ebb6ae4ee5
+  Stored in directory: /home/harold/.cache/pip/wheels/df/6f/8d/9482b0fd5432e586b949634281411588bf57750e6830afb038
+  Building wheel for pystoi (setup.py) ... done
+  Created wheel for pystoi: filename=pystoi-0.3.3-py2.py3-none-any.whl size=7777 sha256=b2aace7441eeb838d2ed342be219d2671ecb61333eb6e6ff2cca874e5915a5dd
+  Stored in directory: /home/harold/.cache/pip/wheels/d9/ef/b0/99e7520b5d849bd89275854d61c6ec6a7faccb707548a3da40
+  Building wheel for distance (setup.py) ... done
+  Created wheel for distance: filename=Distance-0.1.3-py3-none-any.whl size=16257 sha256=b14e5ef460e9b32a759e6a37f25106611e3314f67d13ed704c7e6434a3a9e357
+  Stored in directory: /home/harold/.cache/pip/wheels/6a/41/b0/39f403bd1fb459600f3ced3f74e8e88ffd5a409584a043785a
+  Building wheel for future (setup.py) ... done
+  Created wheel for future: filename=future-0.18.3-py3-none-any.whl size=492025 sha256=5f54e62d57e02df03a4f9d4bfe92681633a66118e9474d6191ff930de7dacaf2
+  Stored in directory: /home/harold/.cache/pip/wheels/69/c0/ce/f2a18105d619f21239a048bcc58e98d8ce47ac824e0531f1a0
+  Building wheel for lit (setup.py) ... done
+  Created wheel for lit: filename=lit-16.0.1-py3-none-any.whl size=88173 sha256=caf8de5be61b6dadd189c50519066e586641128b67c9d262e3e3328ee36999df
+  Stored in directory: /home/harold/.cache/pip/wheels/ed/fa/7b/19e26c4739cc53035af81e7a33521885c8c2fb794288714285
+Successfully built fast-bss-eval diffusers transformers controlnet_aux ctc-segmentation pyworld torch-stoi ci-sdr ffmpy antlr4-python3-runtime julius audioread jaconv mir-eval pesq pystoi distance future lit
+Installing collected packages: tokenizers, sentencepiece, pytz, pydub, pesq, msgpack, mpmath, lit, jamo, jaconv, ffmpy, distance, cmake, cached-property, appdirs, antlr4-python3-runtime, zipp, xxhash, websockets, waitress, unidecode, uc-micro-py, tzdata, typing-extensions, typeguard, threadpoolctl, sympy, sniffio, semantic-version, regex, PyYAML, python-multipart, python-dateutil, pyrsistent, pypinyin, pyparsing, pyDeprecate, psutil, protobuf, Pillow, orjson, nvidia-nvtx-cu11, nvidia-nccl-cu11, nvidia-cusparse-cu11, nvidia-curand-cu11, nvidia-cufft-cu11, nvidia-cuda-runtime-cu11, nvidia-cuda-nvrtc-cu11, nvidia-cuda-cupti-cu11, nvidia-cublas-cu11, numpy, networkx, multidict, mdurl, markupsafe, llvmlite, lazy-loader, kiwisolver, joblib, itsdangerous, humanfriendly, h11, future, fsspec, frozenlist, fonttools, filelock, entrypoints, einops, editdistance, dill, decorator, Cython, cycler, configargparse, click, audioread, attrs, async-timeout, aiofiles, yarl, Werkzeug, uvicorn, torch-complex, tiktoken, soxr, soundfile, scipy, responses, pyworld, pytorch-wpe, pytesseract, pydantic, pyarrow, pooch, pandas, opt-einsum, opencv-python, omegaconf, nvidia-cusolver-cu11, nvidia-cudnn-cu11, numba, nltk, multiprocess, markdown-it-py, linkify-it-py, lightning-utilities, kaldiio, jsonschema, Jinja2, importlib-metadata, hyperpyyaml, huggingface-hub, h5py, ctc-segmentation, contourpy, anyio, aiosignal, transformers, starlette, scikit-learn, pystoi, mir-eval, mdit-py-plugins, matplotlib, inflect, hydra-core, httpcore, flask, fast-bss-eval, diffusers, altair, aiohttp, pb-bss-eval, librosa, httpx, g2p-en, flask_cors, fastapi, gradio-client, espnet-tts-frontend, datasets, gradio, triton, torch, torchmetrics, torchaudio, pytorch-ranger, ci-sdr, torchvision, torch-stoi, torch-optimizer, pytorch-lightning, julius, espnet, asteroid-filterbanks, timm, speechbrain, espnet_model_zoo, controlnet_aux, asteroid, accelerate
+Successfully installed Cython-0.29.34 Jinja2-3.1.2 Pillow-9.5.0 PyYAML-6.0 Werkzeug-2.2.3 accelerate-0.18.0 aiofiles-23.1.0 aiohttp-3.8.4 aiosignal-1.3.1 altair-4.2.2 antlr4-python3-runtime-4.9.3 anyio-3.6.2 appdirs-1.4.4 asteroid-0.6.0 asteroid-filterbanks-0.4.0 async-timeout-4.0.2 attrs-22.2.0 audioread-3.0.0 cached-property-1.5.2 ci-sdr-0.0.2 click-8.1.3 cmake-3.26.3 configargparse-1.5.3 contourpy-1.0.7 controlnet_aux-0.0.1 ctc-segmentation-1.7.4 cycler-0.11.0 datasets-2.11.0 decorator-5.1.1 diffusers-0.15.0.dev0 dill-0.3.6 distance-0.1.3 editdistance-0.6.2 einops-0.6.0 entrypoints-0.4 espnet-202301 espnet-tts-frontend-0.0.3 espnet_model_zoo-0.1.7 fast-bss-eval-0.1.3 fastapi-0.95.1 ffmpy-0.3.0 filelock-3.11.0 flask-2.2.3 flask_cors-3.0.10 fonttools-4.39.3 frozenlist-1.3.3 fsspec-2023.4.0 future-0.18.3 g2p-en-2.1.0 gradio-3.24.1 gradio-client-0.1.3 h11-0.14.0 h5py-3.8.0 httpcore-0.17.0 httpx-0.24.0 huggingface-hub-0.13.4 humanfriendly-10.0 hydra-core-1.3.2 hyperpyyaml-1.2.0 importlib-metadata-4.13.0 inflect-6.0.4 itsdangerous-2.1.2 jaconv-0.3.4 jamo-0.4.1 joblib-1.2.0 jsonschema-4.17.3 julius-0.2.7 kaldiio-2.18.0 kiwisolver-1.4.4 lazy-loader-0.2 librosa-0.10.0.post2 lightning-utilities-0.8.0 linkify-it-py-2.0.0 lit-16.0.1 llvmlite-0.39.1 markdown-it-py-2.2.0 markupsafe-2.1.2 matplotlib-3.7.1 mdit-py-plugins-0.3.3 mdurl-0.1.2 mir-eval-0.7 mpmath-1.3.0 msgpack-1.0.5 multidict-6.0.4 multiprocess-0.70.14 networkx-3.1 nltk-3.8.1 numba-0.56.4 numpy-1.23.5 nvidia-cublas-cu11-11.10.3.66 nvidia-cuda-cupti-cu11-11.7.101 nvidia-cuda-nvrtc-cu11-11.7.99 nvidia-cuda-runtime-cu11-11.7.99 nvidia-cudnn-cu11-8.5.0.96 nvidia-cufft-cu11-10.9.0.58 nvidia-curand-cu11-10.2.10.91 nvidia-cusolver-cu11-11.4.0.1 nvidia-cusparse-cu11-11.7.4.91 nvidia-nccl-cu11-2.14.3 nvidia-nvtx-cu11-11.7.91 omegaconf-2.3.0 opencv-python-4.7.0.72 opt-einsum-3.3.0 orjson-3.8.10 pandas-2.0.0 pb-bss-eval-0.0.2 pesq-0.0.4 pooch-1.6.0 protobuf-3.20.1 psutil-5.9.4 pyDeprecate-0.3.2 pyarrow-11.0.0 pydantic-1.10.7 pydub-0.25.1 pyparsing-3.0.9 pypinyin-0.44.0 pyrsistent-0.19.3 pystoi-0.3.3 pytesseract-0.3.10 python-dateutil-2.8.2 python-multipart-0.0.6 pytorch-lightning-2.0.1.post0 pytorch-ranger-0.1.1 pytorch-wpe-0.0.1 pytz-2023.3 pyworld-0.3.2 regex-2023.3.23 responses-0.18.0 scikit-learn-1.2.2 scipy-1.10.1 semantic-version-2.10.0 sentencepiece-0.1.98 sniffio-1.3.0 soundfile-0.12.1 soxr-0.3.5 speechbrain-0.5.14 starlette-0.26.1 sympy-1.11.1 threadpoolctl-3.1.0 tiktoken-0.3.3 timm-0.6.13 tokenizers-0.13.3 torch-2.0.0 torch-complex-0.4.3 torch-optimizer-0.1.0 torch-stoi-0.1.2 torchaudio-2.0.1 torchmetrics-0.7.3 torchvision-0.15.1 transformers-4.28.0.dev0 triton-2.0.0 typeguard-2.13.3 typing-extensions-4.5.0 tzdata-2023.3 uc-micro-py-1.0.1 unidecode-1.3.6 uvicorn-0.21.1 waitress-2.1.2 websockets-11.0.1 xxhash-3.2.0 yarl-1.8.2 zipp-3.15.0
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server$ source ~/.bashrc
+(base) harold@Strix:/home/JARVIS/server$ sudo apt-get install git-lfs
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  git-lfs
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3316 kB of archives.
+After this operation, 11.1 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 git-lfs amd64 2.9.2-1 [3316 kB]
+Fetched 3316 kB in 2s (1979 kB/s)
+Selecting previously unselected package git-lfs.
+(Reading database ... 41994 files and directories currently installed.)
+Preparing to unpack .../git-lfs_2.9.2-1_amd64.deb ...
+Unpacking git-lfs (2.9.2-1) ...
+Setting up git-lfs (2.9.2-1) ...
+Processing triggers for man-db (2.9.1-1) ...
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server$ cd models/
+(base) harold@Strix:/home/JARVIS/server/models$ bash download.sh
+----- Downloading from https://huggingface.co/nlpconnect/vit-gpt2-image-captioning -----
+Cloning into 'nlpconnect/vit-gpt2-image-captioning'...
+remote: Enumerating objects: 47, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 47 (delta 0), reused 3 (delta 0), pack-reused 44
+Unpacking objects: 100% (47/47), 760.62 KiB | 3.41 MiB/s, done.
+----- Downloading from https://huggingface.co/lllyasviel/ControlNet -----
+Cloning into 'lllyasviel/ControlNet'...
+remote: Enumerating objects: 52, done.
+remote: Counting objects: 100% (52/52), done.
+remote: Compressing objects: 100% (49/49), done.
+remote: Total 52 (delta 16), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (52/52), 7.06 KiB | 657.00 KiB/s, done.
+Filtering content: 100% (16/16), 11.80 GiB | 2.94 MiB/s, done.
+Encountered 8 file(s) that may not have been copied correctly on Windows:
+        models/control_sd15_normal.pth
+        models/control_sd15_canny.pth
+        models/control_sd15_hed.pth
+        models/control_sd15_mlsd.pth
+        models/control_sd15_scribble.pth
+        models/control_sd15_seg.pth
+        models/control_sd15_openpose.pth
+        models/control_sd15_depth.pth
+
+See: `git lfs help smudge` for more details.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-canny -----
+Cloning into 'lllyasviel/sd-controlnet-canny'...
+remote: Enumerating objects: 102, done.
+remote: Counting objects: 100% (102/102), done.
+remote: Compressing objects: 100% (100/100), done.
+remote: Total 102 (delta 25), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (102/102), 8.95 MiB | 1.44 MiB/s, done.
+Resolving deltas: 100% (25/25), done.
+Filtering content: 100% (3/3), 2.69 GiB | 12.12 MiB/s, done.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-depth -----
+Cloning into 'lllyasviel/sd-controlnet-depth'...
+remote: Enumerating objects: 99, done.
+remote: Counting objects: 100% (99/99), done.
+remote: Compressing objects: 100% (97/97), done.
+remote: Total 99 (delta 22), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (99/99), 8.47 MiB | 1.11 MiB/s, done.
+Filtering content: 100% (2/2), 2.69 GiB | 11.33 MiB/s, done.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-hed -----
+Cloning into 'lllyasviel/sd-controlnet-hed'...
+remote: Enumerating objects: 99, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 99 (delta 5), reused 0 (delta 0), pack-reused 87
+Unpacking objects: 100% (99/99), 8.87 MiB | 6.00 MiB/s, done.
+Filtering content: 100% (2/2), 2.69 GiB | 10.91 MiB/s, done.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-mlsd -----
+Cloning into 'lllyasviel/sd-controlnet-mlsd'...
+remote: Enumerating objects: 99, done.
+remote: Counting objects: 100% (68/68), done.
+remote: Compressing objects: 100% (68/68), done.
+remote: Total 99 (delta 17), reused 0 (delta 0), pack-reused 31
+Unpacking objects: 100% (99/99), 8.67 MiB | 1.40 MiB/s, done.
+Filtering content: 100% (2/2), 2.69 GiB | 11.68 MiB/s, done.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-openpose -----
+Cloning into 'lllyasviel/sd-controlnet-openpose'...
+remote: Enumerating objects: 99, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 99 (delta 3), reused 0 (delta 0), pack-reused 91
+Unpacking objects: 100% (99/99), 8.84 MiB | 11.02 MiB/s, done.
+Updating files: 100% (10/10), done.
+Filtering content: 100% (2/2), 2.69 GiB | 12.10 MiB/s, done.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-scribble -----
+Cloning into 'lllyasviel/sd-controlnet-scribble'...
+remote: Enumerating objects: 99, done.
+remote: Counting objects: 100% (66/66), done.
+remote: Compressing objects: 100% (66/66), done.
+remote: Total 99 (delta 17), reused 0 (delta 0), pack-reused 33
+Unpacking objects: 100% (99/99), 8.75 MiB | 1.24 MiB/s, done.
+Filtering content: 100% (2/2), 2.69 GiB | 11.57 MiB/s, done.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-seg -----
+Cloning into 'lllyasviel/sd-controlnet-seg'...
+remote: Enumerating objects: 105, done.
+remote: Counting objects: 100% (72/72), done.
+remote: Compressing objects: 100% (72/72), done.
+remote: Total 105 (delta 21), reused 0 (delta 0), pack-reused 33
+Receiving objects: 100% (105/105), 8.62 MiB | 1.47 MiB/s, done.
+Resolving deltas: 100% (24/24), done.
+Filtering content: 100% (2/2), 2.69 GiB | 10.89 MiB/s, done.
+----- Downloading from https://huggingface.co/runwayml/stable-diffusion-v1-5 -----
+Cloning into 'runwayml/stable-diffusion-v1-5'...
+remote: Enumerating objects: 173, done.
+remote: Counting objects: 100% (173/173), done.
+remote: Compressing objects: 100% (102/102), done.
+remote: Total 173 (delta 62), reused 173 (delta 62), pack-reused 0
+Receiving objects: 100% (173/173), 542.50 KiB | 184.00 KiB/s, done.
+Resolving deltas: 100% (62/62), done.
+Filtering content: 100% (12/12), 24.50 GiB | 8.59 MiB/s, done.
+Encountered 4 file(s) that may not have been copied correctly on Windows:
+        v1-5-pruned-emaonly.ckpt
+        v1-5-pruned-emaonly.safetensors
+        v1-5-pruned.ckpt
+        v1-5-pruned.safetensors
+
+See: `git lfs help smudge` for more details.
+----- Downloading from https://huggingface.co/damo-vilab/text-to-video-ms-1.7b -----
+Cloning into 'damo-vilab/text-to-video-ms-1.7b'...
+remote: Enumerating objects: 73, done.
+remote: Counting objects: 100% (70/70), done.
+remote: Compressing objects: 100% (69/69), done.
+remote: Total 73 (delta 23), reused 27 (delta 0), pack-reused 3
+Unpacking objects: 100% (73/73), 525.94 KiB | 1.00 MiB/s, done.
+Downloading unet/diffusion_pytorch_model.bin (5.6 GB)s
+Error downloading object: unet/diffusion_pytorch_model.bin (a6f519b): Smudge error: Error downloading unet/diffusion_pytorch_model.bin (a6f519b8cca193d6b15e9e33f5011dcb670de1ee8a9a12e8498ca586a7307651): cannot write data to tempfile "/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/incomplete/a6f519b8cca193d6b15e9e33f5011dcb670de1ee8a9a12e8498ca586a7307651698844027": write /home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/incomplete/a6f519b8cca193d6b15e9e33f5011dcb670de1ee8a9a12e8498ca586a7307651698844027: no space left on device
+Unable to log panic to /home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/logs: mkdir /home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/logs: no space left on device
+
+git-lfs/2.9.2 (GitHub; linux amd64; go 1.13.5)
+git version 2.25.1
+
+$ git-lfs filter-process
+Error downloading object: unet/diffusion_pytorch_model.bin (a6f519b): Smudge error: Error downloading unet/diffusion_pytorch_model.bin (a6f519b8cca193d6b15e9e33f5011dcb670de1ee8a9a12e8498ca586a7307651): cannot write data to tempfile "/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/incomplete/a6f519b8cca193d6b15e9e33f5011dcb670de1ee8a9a12e8498ca586a7307651698844027": write /home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/incomplete/a6f519b8cca193d6b15e9e33f5011dcb670de1ee8a9a12e8498ca586a7307651698844027: no space left on device
+
+write /home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/incomplete/a6f519b8cca193d6b15e9e33f5011dcb670de1ee8a9a12e8498ca586a7307651698844027: no space left on device
+cannot write data to tempfile "/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/incomplete/a6f519b8cca193d6b15e9e33f5011dcb670de1ee8a9a12e8498ca586a7307651698844027"
+github.com/git-lfs/git-lfs/errors.newWrappedError
+        github.com/git-lfs/git-lfs/errors/types.go:198
+github.com/git-lfs/git-lfs/errors.Wrapf
+        github.com/git-lfs/git-lfs/errors/errors.go:85
+github.com/git-lfs/git-lfs/tq.(*basicDownloadAdapter).download
+        github.com/git-lfs/git-lfs/tq/basic_download.go:250
+github.com/git-lfs/git-lfs/tq.(*basicDownloadAdapter).DoTransfer
+        github.com/git-lfs/git-lfs/tq/basic_download.go:101
+github.com/git-lfs/git-lfs/tq.(*adapterBase).worker
+        github.com/git-lfs/git-lfs/tq/adapterbase.go:182
+runtime.goexit
+        /usr/lib/go-1.13/src/runtime/asm_amd64.s:1357
+Error downloading unet/diffusion_pytorch_model.bin (a6f519b8cca193d6b15e9e33f5011dcb670de1ee8a9a12e8498ca586a7307651)
+github.com/git-lfs/git-lfs/errors.newWrappedError
+        github.com/git-lfs/git-lfs/errors/types.go:198
+github.com/git-lfs/git-lfs/errors.Wrapf
+        github.com/git-lfs/git-lfs/errors/errors.go:85
+github.com/git-lfs/git-lfs/lfs.(*GitFilter).downloadFile
+        github.com/git-lfs/git-lfs/lfs/gitfilter_smudge.go:115
+github.com/git-lfs/git-lfs/lfs.(*GitFilter).Smudge
+        github.com/git-lfs/git-lfs/lfs/gitfilter_smudge.go:76
+github.com/git-lfs/git-lfs/commands.smudge
+        github.com/git-lfs/git-lfs/commands/command_smudge.go:127
+github.com/git-lfs/git-lfs/commands.filterCommand
+        github.com/git-lfs/git-lfs/commands/command_filter_process.go:118
+github.com/spf13/cobra.(*Command).execute
+        github.com/spf13/cobra/command.go:766
+github.com/spf13/cobra.(*Command).ExecuteC
+        github.com/spf13/cobra/command.go:850
+github.com/spf13/cobra.(*Command).Execute
+        github.com/spf13/cobra/command.go:800
+github.com/git-lfs/git-lfs/commands.Run
+        github.com/git-lfs/git-lfs/commands/run.go:97
+main.main
+        github.com/git-lfs/git-lfs/git-lfs.go:33
+runtime.main
+        /usr/lib/go-1.13/src/runtime/proc.go:203
+runtime.goexit
+        /usr/lib/go-1.13/src/runtime/asm_amd64.s:1357
+Smudge error
+github.com/git-lfs/git-lfs/errors.newWrappedError
+        github.com/git-lfs/git-lfs/errors/types.go:198
+github.com/git-lfs/git-lfs/errors.NewSmudgeError
+        github.com/git-lfs/git-lfs/errors/types.go:284
+github.com/git-lfs/git-lfs/lfs.(*GitFilter).Smudge
+        github.com/git-lfs/git-lfs/lfs/gitfilter_smudge.go:85
+github.com/git-lfs/git-lfs/commands.smudge
+        github.com/git-lfs/git-lfs/commands/command_smudge.go:127
+github.com/git-lfs/git-lfs/commands.filterCommand
+        github.com/git-lfs/git-lfs/commands/command_filter_process.go:118
+github.com/spf13/cobra.(*Command).execute
+        github.com/spf13/cobra/command.go:766
+github.com/spf13/cobra.(*Command).ExecuteC
+        github.com/spf13/cobra/command.go:850
+github.com/spf13/cobra.(*Command).Execute
+        github.com/spf13/cobra/command.go:800
+github.com/git-lfs/git-lfs/commands.Run
+        github.com/git-lfs/git-lfs/commands/run.go:97
+main.main
+        github.com/git-lfs/git-lfs/git-lfs.go:33
+runtime.main
+        /usr/lib/go-1.13/src/runtime/proc.go:203
+runtime.goexit
+        /usr/lib/go-1.13/src/runtime/asm_amd64.s:1357
+
+Current time in UTC:
+2023-04-16 08:18:56
+
+ENV:
+LocalWorkingDir=/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b
+LocalGitDir=/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git
+LocalGitStorageDir=/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git
+LocalMediaDir=/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/objects
+LocalReferenceDirs=
+TempDir=/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/tmp
+ConcurrentTransfers=3
+TusTransfers=false
+BasicTransfersOnly=false
+SkipDownloadErrors=false
+FetchRecentAlways=false
+FetchRecentRefsDays=7
+FetchRecentCommitsDays=0
+FetchRecentRefsIncludeRemotes=true
+PruneOffsetDays=3
+PruneVerifyRemoteAlways=false
+PruneRemoteName=origin
+LfsStorageDir=/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs
+AccessDownload=none
+AccessUpload=none
+DownloadTransfers=basic,lfs-standalone-file
+UploadTransfers=basic,lfs-standalone-file
+GIT_EXEC_PATH=/usr/lib/git-core
+GIT_DIR=/home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git
+
+Client IP addresses:
+172.29.149.38 fe80::215:5dff:fe59:56d1
+error: external filter 'git-lfs filter-process' failed
+fatal: unet/diffusion_pytorch_model.bin: smudge filter lfs failed
+warning: Clone succeeded, but checkout failed.
+You can inspect what was checked out with 'git status'
+and retry with 'git restore --source=HEAD :/'
+
+----- Downloading from https://huggingface.co/microsoft/speecht5_asr -----
+fatal: could not create leading directories of 'microsoft/speecht5_asr': No space left on device
+----- Downloading from https://huggingface.co/JorisCos/DCCRNet_Libri1Mix_enhsingle_16k -----
+fatal: could not create leading directories of 'JorisCos/DCCRNet_Libri1Mix_enhsingle_16k': No space left on device
+----- Downloading from https://huggingface.co/espnet/kan-bayashi_ljspeech_vits -----
+fatal: could not create leading directories of 'espnet/kan-bayashi_ljspeech_vits': No space left on device
+----- Downloading from https://huggingface.co/facebook/detr-resnet-101 -----
+fatal: could not create leading directories of 'facebook/detr-resnet-101': No space left on device
+----- Downloading from https://huggingface.co/microsoft/speecht5_hifigan -----
+fatal: could not create leading directories of 'microsoft/speecht5_hifigan': No space left on device
+----- Downloading from https://huggingface.co/microsoft/speecht5_vc -----
+fatal: could not create leading directories of 'microsoft/speecht5_vc': No space left on device
+----- Downloading from https://huggingface.co/openai/whisper-base -----
+fatal: could not create leading directories of 'openai/whisper-base': No space left on device
+----- Downloading from https://huggingface.co/Intel/dpt-large -----
+fatal: could not create leading directories of 'Intel/dpt-large': No space left on device
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50-panoptic -----
+fatal: could not create leading directories of 'facebook/detr-resnet-50-panoptic': No space left on device
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50 -----
+fatal: could not create leading directories of 'facebook/detr-resnet-50': No space left on device
+----- Downloading from https://huggingface.co/google/owlvit-base-patch32 -----
+fatal: could not create leading directories of 'google/owlvit-base-patch32': No space left on device
+----- Downloading from https://huggingface.co/impira/layoutlm-document-qa -----
+fatal: could not create leading directories of 'impira/layoutlm-document-qa': No space left on device
+----- Downloading from https://huggingface.co/ydshieh/vit-gpt2-coco-en -----
+fatal: could not create leading directories of 'ydshieh/vit-gpt2-coco-en': No space left on device
+----- Downloading from https://huggingface.co/dandelin/vilt-b32-finetuned-vqa -----
+fatal: could not create leading directories of 'dandelin/vilt-b32-finetuned-vqa': No space left on device
+----- Downloading from https://huggingface.co/lambdalabs/sd-image-variations-diffusers -----
+fatal: could not create leading directories of 'lambdalabs/sd-image-variations-diffusers': No space left on device
+----- Downloading from https://huggingface.co/facebook/maskformer-swin-base-coco -----
+fatal: could not create leading directories of 'facebook/maskformer-swin-base-coco': No space left on device
+----- Downloading from https://huggingface.co/Intel/dpt-hybrid-midas -----
+fatal: could not create leading directories of 'Intel/dpt-hybrid-midas': No space left on device
+----- Downloading from https://huggingface.co/datasets/Matthijs/cmu-arctic-xvectors -----
+fatal: could not create leading directories of 'Matthijs/cmu-arctic-xvectors': No space left on device
+
+(base) harold@Strix:/home/JARVIS/server/models$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+none            7.8G  4.0K  7.8G   1% /mnt/wsl
+none            466G  103G  364G  22% /usr/lib/wsl/drivers
+none            7.8G     0  7.8G   0% /usr/lib/wsl/lib
+/dev/sdc        251G  239G     0 100% /
+none            7.8G   92K  7.8G   1% /mnt/wslg
+rootfs          7.8G  1.9M  7.8G   1% /init
+none            7.8G     0  7.8G   0% /dev
+none            7.8G  4.0K  7.8G   1% /run
+none            7.8G     0  7.8G   0% /run/lock
+none            7.8G     0  7.8G   0% /run/shm
+none            7.8G     0  7.8G   0% /run/user
+none            7.8G   76K  7.8G   1% /mnt/wslg/versions.txt
+none            7.8G   76K  7.8G   1% /mnt/wslg/doc
+drvfs           466G  103G  364G  22% /mnt/c
+drvfs           932G  240G  692G  26% /mnt/d
+(base) harold@Strix:/home/JARVIS/server/models$
+
+************************ Day 2, due to Ubuntu running out of disk space, resized the ext4.vhdx using Diskpart and sudo resize2fs /dev/sdc ************************
+
+wsl --shutdown
+diskpart
+select vdisk file="D:\wsl\ubuntu\ext4.vhdx"
+expand vdisk maximum=768000
+exit
+wsl
+sudo resize2fs /dev/sdc
+
+************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server/models$ bash download.sh
+----- Downloading from https://huggingface.co/nlpconnect/vit-gpt2-image-captioning -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/ControlNet -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-canny -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-depth -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-hed -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-mlsd -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-openpose -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-scribble -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-seg -----
+Already up to date.
+----- Downloading from https://huggingface.co/runwayml/stable-diffusion-v1-5 -----
+Already up to date.
+----- Downloading from https://huggingface.co/damo-vilab/text-to-video-ms-1.7b -----
+Already up to date.
+Error updating the git index: (2/2), 11 GB | 26 MB/s
+error: unet/diffusion_pytorch_model.bin: cannot add to the index - missing --add option?
+fatal: Unable to process path unet/diffusion_pytorch_model.bin
+Encountered 1 file(s) that may not have been copied correctly on Windows:
+        unet/diffusion_pytorch_model.bin
+
+See: `git lfs help smudge` for more details.
+
+
+Errors logged to /home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/logs/20230416T083526.380109092.log
+Use `git lfs logs last` to view the log.
+----- Downloading from https://huggingface.co/microsoft/speecht5_asr -----
+Cloning into 'microsoft/speecht5_asr'...
+remote: Enumerating objects: 24, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 24 (delta 0), reused 0 (delta 0), pack-reused 17
+Unpacking objects: 100% (24/24), 6.40 KiB | 655.00 KiB/s, done.
+Filtering content: 100% (2/2), 578.33 MiB | 10.52 MiB/s, done.
+----- Downloading from https://huggingface.co/JorisCos/DCCRNet_Libri1Mix_enhsingle_16k -----
+Cloning into 'JorisCos/DCCRNet_Libri1Mix_enhsingle_16k'...
+remote: Enumerating objects: 25, done.
+remote: Total 25 (delta 0), reused 0 (delta 0), pack-reused 25
+Unpacking objects: 100% (25/25), 3.24 KiB | 829.00 KiB/s, done.
+----- Downloading from https://huggingface.co/espnet/kan-bayashi_ljspeech_vits -----
+Cloning into 'espnet/kan-bayashi_ljspeech_vits'...
+remote: Enumerating objects: 34, done.
+remote: Total 34 (delta 0), reused 0 (delta 0), pack-reused 34
+Unpacking objects: 100% (34/34), 989.57 KiB | 4.83 MiB/s, done.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-101 -----
+Cloning into 'facebook/detr-resnet-101'...
+remote: Enumerating objects: 39, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 39 (delta 2), reused 0 (delta 0), pack-reused 30
+Unpacking objects: 100% (39/39), 34.10 KiB | 3.79 MiB/s, done.
+----- Downloading from https://huggingface.co/microsoft/speecht5_hifigan -----
+Cloning into 'microsoft/speecht5_hifigan'...
+remote: Enumerating objects: 10, done.
+remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 10
+Unpacking objects: 100% (10/10), 2.01 KiB | 1.01 MiB/s, done.
+----- Downloading from https://huggingface.co/microsoft/speecht5_vc -----
+Cloning into 'microsoft/speecht5_vc'...
+remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 22 (delta 0), reused 6 (delta 0), pack-reused 16
+Unpacking objects: 100% (22/22), 6.20 KiB | 1.55 MiB/s, done.
+----- Downloading from https://huggingface.co/openai/whisper-base -----
+Cloning into 'openai/whisper-base'...
+remote: Enumerating objects: 142, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 142 (delta 9), reused 10 (delta 4), pack-reused 125
+Receiving objects: 100% (142/142), 2.29 MiB | 7.41 MiB/s, done.
+Resolving deltas: 100% (79/79), done.
+Filtering content: 100% (3/3), 831.13 MiB | 10.10 MiB/s, done.
+----- Downloading from https://huggingface.co/Intel/dpt-large -----
+Cloning into 'Intel/dpt-large'...
+remote: Enumerating objects: 56, done.
+remote: Counting objects: 100% (33/33), done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 56 (delta 20), reused 20 (delta 12), pack-reused 23
+Unpacking objects: 100% (56/56), 9.90 KiB | 779.00 KiB/s, done.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50-panoptic -----
+Cloning into 'facebook/detr-resnet-50-panoptic'...
+remote: Enumerating objects: 48, done.
+remote: Total 48 (delta 0), reused 0 (delta 0), pack-reused 48
+Unpacking objects: 100% (48/48), 13.32 KiB | 1.33 MiB/s, done.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50 -----
+Cloning into 'facebook/detr-resnet-50'...
+remote: Enumerating objects: 71, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 71 (delta 2), reused 9 (delta 2), pack-reused 62
+Unpacking objects: 100% (71/71), 15.48 KiB | 990.00 KiB/s, done.
+----- Downloading from https://huggingface.co/google/owlvit-base-patch32 -----
+Cloning into 'google/owlvit-base-patch32'...
+remote: Enumerating objects: 61, done.
+remote: Total 61 (delta 0), reused 0 (delta 0), pack-reused 61
+Unpacking objects: 100% (61/61), 520.83 KiB | 3.04 MiB/s, done.
+----- Downloading from https://huggingface.co/impira/layoutlm-document-qa -----
+Cloning into 'impira/layoutlm-document-qa'...
+remote: Enumerating objects: 91, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 91 (delta 0), reused 0 (delta 0), pack-reused 87
+Unpacking objects: 100% (91/91), 769.48 KiB | 2.95 MiB/s, done.
+Filtering content: 100% (3/3), 1.42 GiB | 10.61 MiB/s, done.
+----- Downloading from https://huggingface.co/ydshieh/vit-gpt2-coco-en -----
+Cloning into 'ydshieh/vit-gpt2-coco-en'...
+remote: Enumerating objects: 74, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 74 (delta 3), reused 9 (delta 3), pack-reused 65
+Unpacking objects: 100% (74/74), 1.42 MiB | 4.94 MiB/s, done.
+Filtering content: 100% (4/4), 2.70 GiB | 10.50 MiB/s, done.
+----- Downloading from https://huggingface.co/dandelin/vilt-b32-finetuned-vqa -----
+Cloning into 'dandelin/vilt-b32-finetuned-vqa'...
+remote: Enumerating objects: 53, done.
+remote: Total 53 (delta 0), reused 0 (delta 0), pack-reused 53
+Unpacking objects: 100% (53/53), 546.26 KiB | 3.27 MiB/s, done.
+----- Downloading from https://huggingface.co/lambdalabs/sd-image-variations-diffusers -----
+Cloning into 'lambdalabs/sd-image-variations-diffusers'...
+remote: Enumerating objects: 98, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 98 (delta 0), reused 0 (delta 0), pack-reused 95
+Unpacking objects: 100% (98/98), 1.58 MiB | 5.89 MiB/s, done.
+Filtering content: 100% (4/4), 5.77 GiB | 10.31 MiB/s, done.
+----- Downloading from https://huggingface.co/facebook/maskformer-swin-base-coco -----
+Cloning into 'facebook/maskformer-swin-base-coco'...
+remote: Enumerating objects: 25, done.
+remote: Total 25 (delta 0), reused 0 (delta 0), pack-reused 25
+Unpacking objects: 100% (25/25), 7.09 KiB | 1.42 MiB/s, done.
+----- Downloading from https://huggingface.co/Intel/dpt-hybrid-midas -----
+Cloning into 'Intel/dpt-hybrid-midas'...
+remote: Enumerating objects: 37, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 37 (delta 0), reused 3 (delta 0), pack-reused 34
+Unpacking objects: 100% (37/37), 11.36 KiB | 447.00 KiB/s, done.
+----- Downloading from https://huggingface.co/datasets/Matthijs/cmu-arctic-xvectors -----
+Cloning into 'Matthijs/cmu-arctic-xvectors'...
+remote: Enumerating objects: 12, done.
+remote: Total 12 (delta 0), reused 0 (delta 0), pack-reused 12
+Unpacking objects: 100% (12/12), 2.38 KiB | 1.19 MiB/s, done.
+
+************************ ************************ Rerun download.sh to ensure all models are current ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server/models$ bash download.sh
+----- Downloading from https://huggingface.co/nlpconnect/vit-gpt2-image-captioning -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/ControlNet -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-canny -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-depth -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-hed -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-mlsd -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-openpose -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-scribble -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-seg -----
+Already up to date.
+----- Downloading from https://huggingface.co/runwayml/stable-diffusion-v1-5 -----
+Already up to date.
+----- Downloading from https://huggingface.co/damo-vilab/text-to-video-ms-1.7b -----
+Already up to date.
+----- Downloading from https://huggingface.co/microsoft/speecht5_asr -----
+Already up to date.
+----- Downloading from https://huggingface.co/JorisCos/DCCRNet_Libri1Mix_enhsingle_16k -----
+Already up to date.
+----- Downloading from https://huggingface.co/espnet/kan-bayashi_ljspeech_vits -----
+Already up to date.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-101 -----
+Already up to date.
+----- Downloading from https://huggingface.co/microsoft/speecht5_hifigan -----
+Already up to date.
+----- Downloading from https://huggingface.co/microsoft/speecht5_vc -----
+Already up to date.
+----- Downloading from https://huggingface.co/openai/whisper-base -----
+Already up to date.
+----- Downloading from https://huggingface.co/Intel/dpt-large -----
+Already up to date.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50-panoptic -----
+Already up to date.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50 -----
+Already up to date.
+----- Downloading from https://huggingface.co/google/owlvit-base-patch32 -----
+Already up to date.
+----- Downloading from https://huggingface.co/impira/layoutlm-document-qa -----
+Already up to date.
+----- Downloading from https://huggingface.co/ydshieh/vit-gpt2-coco-en -----
+Already up to date.
+----- Downloading from https://huggingface.co/dandelin/vilt-b32-finetuned-vqa -----
+Already up to date.
+----- Downloading from https://huggingface.co/lambdalabs/sd-image-variations-diffusers -----
+Already up to date.
+----- Downloading from https://huggingface.co/facebook/maskformer-swin-base-coco -----
+Already up to date.
+----- Downloading from https://huggingface.co/Intel/dpt-hybrid-midas -----
+Already up to date.
+----- Downloading from https://huggingface.co/datasets/Matthijs/cmu-arctic-xvectors -----
+Already up to date.
+(base) harold@Strix:/home/JARVIS/server/models$
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server/models$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc        738G  284G  421G  41% /
+rootfs          7.8G  1.9M  7.8G   1% /init
+none            7.8G     0  7.8G   0% /dev
+none            7.8G     0  7.8G   0% /dev/shm
+none            7.8G  4.0K  7.8G   1% /run
+none            7.8G     0  7.8G   0% /run/lock
+none            7.8G     0  7.8G   0% /run/user
+none            466G  341G  125G  74% /usr/lib/wsl/drivers
+none            7.8G     0  7.8G   0% /usr/lib/wsl/lib
+none            7.8G  4.0K  7.8G   1% /mnt/wsl
+none            7.8G   76K  7.8G   1% /mnt/wslg
+none            7.8G   76K  7.8G   1% /mnt/wslg/versions.txt
+none            7.8G   76K  7.8G   1% /mnt/wslg/doc
+drvfs           466G  341G  125G  74% /mnt/c
+drvfs           932G  286G  647G  31% /mnt/d
+(base) harold@Strix:/home/JARVIS/server/models$

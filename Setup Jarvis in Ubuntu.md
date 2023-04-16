@@ -1,5 +1,5 @@
 # Some commands to setup HuggingGPT [Jarvis] on a clean WSL install 
-Last Updated: April 14, 2023
+Last Updated: April 16, 2023
 
 This not a script, just a commented version of the history of my terminal in Ubuntu on Window Subsystem for Linux. Use at your own risk. 
 
@@ -9,6 +9,9 @@ Check with Bing or GPT if you are unsure or unfamiliar with anything.
 If you have suggestions for improvements, please let me know by creating an Issue.
 
 Make sure disk space is available before setting up Jarvis.
+
+You can review the entire history of my WSL installation on Windows 10 here [https://github.com/HaroldMitts/pub/blob/main/WSL-Jarvis-Setup-Full.txt](https://github.com/HaroldMitts/pub/blob/main/WSL-Jarvis-Setup-Full.txt)
+
 
 ```
 sudo apt update -y

@@ -87,7 +87,9 @@ cd models
 bash download.sh 
 ```
 
-Run the server
+Add your OpenAI API key and Huggingface token to conf.yaml and lite.yaml.
+Change the inference mode to huggingface.
+Run the server.
 
 ```
 cd ..
@@ -97,6 +99,7 @@ source ~/.bashrc
 ```
 
 ```
+cd ..
 cd web
 npm install
 npm run dev

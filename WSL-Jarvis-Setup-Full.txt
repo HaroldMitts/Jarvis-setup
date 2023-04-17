@@ -2574,3 +2574,311 @@ none            7.8G   76K  7.8G   1% /mnt/wslg/doc
 drvfs           466G  341G  125G  74% /mnt/c
 drvfs           932G  286G  647G  31% /mnt/d
 (base) harold@Strix:/home/JARVIS/server/models$
+
+************************ Day 2, due to Ubuntu running out of disk space, resized the ext4.vhdx using Diskpart and sudo resize2fs /dev/sdc ************************
+
+wsl --shutdown
+diskpart
+select vdisk file="D:\wsl\ubuntu\ext4.vhdx"
+expand vdisk maximum=768000
+exit
+wsl
+sudo resize2fs /dev/sdc
+
+************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server/models$ bash download.sh
+----- Downloading from https://huggingface.co/nlpconnect/vit-gpt2-image-captioning -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/ControlNet -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-canny -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-depth -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-hed -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-mlsd -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-openpose -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-scribble -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-seg -----
+Already up to date.
+----- Downloading from https://huggingface.co/runwayml/stable-diffusion-v1-5 -----
+Already up to date.
+----- Downloading from https://huggingface.co/damo-vilab/text-to-video-ms-1.7b -----
+Already up to date.
+Error updating the git index: (2/2), 11 GB | 26 MB/s
+error: unet/diffusion_pytorch_model.bin: cannot add to the index - missing --add option?
+fatal: Unable to process path unet/diffusion_pytorch_model.bin
+Encountered 1 file(s) that may not have been copied correctly on Windows:
+        unet/diffusion_pytorch_model.bin
+
+See: `git lfs help smudge` for more details.
+
+
+Errors logged to /home/JARVIS/server/models/damo-vilab/text-to-video-ms-1.7b/.git/lfs/logs/20230416T083526.380109092.log
+Use `git lfs logs last` to view the log.
+----- Downloading from https://huggingface.co/microsoft/speecht5_asr -----
+Cloning into 'microsoft/speecht5_asr'...
+remote: Enumerating objects: 24, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 24 (delta 0), reused 0 (delta 0), pack-reused 17
+Unpacking objects: 100% (24/24), 6.40 KiB | 655.00 KiB/s, done.
+Filtering content: 100% (2/2), 578.33 MiB | 10.52 MiB/s, done.
+----- Downloading from https://huggingface.co/JorisCos/DCCRNet_Libri1Mix_enhsingle_16k -----
+Cloning into 'JorisCos/DCCRNet_Libri1Mix_enhsingle_16k'...
+remote: Enumerating objects: 25, done.
+remote: Total 25 (delta 0), reused 0 (delta 0), pack-reused 25
+Unpacking objects: 100% (25/25), 3.24 KiB | 829.00 KiB/s, done.
+----- Downloading from https://huggingface.co/espnet/kan-bayashi_ljspeech_vits -----
+Cloning into 'espnet/kan-bayashi_ljspeech_vits'...
+remote: Enumerating objects: 34, done.
+remote: Total 34 (delta 0), reused 0 (delta 0), pack-reused 34
+Unpacking objects: 100% (34/34), 989.57 KiB | 4.83 MiB/s, done.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-101 -----
+Cloning into 'facebook/detr-resnet-101'...
+remote: Enumerating objects: 39, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 39 (delta 2), reused 0 (delta 0), pack-reused 30
+Unpacking objects: 100% (39/39), 34.10 KiB | 3.79 MiB/s, done.
+----- Downloading from https://huggingface.co/microsoft/speecht5_hifigan -----
+Cloning into 'microsoft/speecht5_hifigan'...
+remote: Enumerating objects: 10, done.
+remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 10
+Unpacking objects: 100% (10/10), 2.01 KiB | 1.01 MiB/s, done.
+----- Downloading from https://huggingface.co/microsoft/speecht5_vc -----
+Cloning into 'microsoft/speecht5_vc'...
+remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 22 (delta 0), reused 6 (delta 0), pack-reused 16
+Unpacking objects: 100% (22/22), 6.20 KiB | 1.55 MiB/s, done.
+----- Downloading from https://huggingface.co/openai/whisper-base -----
+Cloning into 'openai/whisper-base'...
+remote: Enumerating objects: 142, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 142 (delta 9), reused 10 (delta 4), pack-reused 125
+Receiving objects: 100% (142/142), 2.29 MiB | 7.41 MiB/s, done.
+Resolving deltas: 100% (79/79), done.
+Filtering content: 100% (3/3), 831.13 MiB | 10.10 MiB/s, done.
+----- Downloading from https://huggingface.co/Intel/dpt-large -----
+Cloning into 'Intel/dpt-large'...
+remote: Enumerating objects: 56, done.
+remote: Counting objects: 100% (33/33), done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 56 (delta 20), reused 20 (delta 12), pack-reused 23
+Unpacking objects: 100% (56/56), 9.90 KiB | 779.00 KiB/s, done.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50-panoptic -----
+Cloning into 'facebook/detr-resnet-50-panoptic'...
+remote: Enumerating objects: 48, done.
+remote: Total 48 (delta 0), reused 0 (delta 0), pack-reused 48
+Unpacking objects: 100% (48/48), 13.32 KiB | 1.33 MiB/s, done.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50 -----
+Cloning into 'facebook/detr-resnet-50'...
+remote: Enumerating objects: 71, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 71 (delta 2), reused 9 (delta 2), pack-reused 62
+Unpacking objects: 100% (71/71), 15.48 KiB | 990.00 KiB/s, done.
+----- Downloading from https://huggingface.co/google/owlvit-base-patch32 -----
+Cloning into 'google/owlvit-base-patch32'...
+remote: Enumerating objects: 61, done.
+remote: Total 61 (delta 0), reused 0 (delta 0), pack-reused 61
+Unpacking objects: 100% (61/61), 520.83 KiB | 3.04 MiB/s, done.
+----- Downloading from https://huggingface.co/impira/layoutlm-document-qa -----
+Cloning into 'impira/layoutlm-document-qa'...
+remote: Enumerating objects: 91, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 91 (delta 0), reused 0 (delta 0), pack-reused 87
+Unpacking objects: 100% (91/91), 769.48 KiB | 2.95 MiB/s, done.
+Filtering content: 100% (3/3), 1.42 GiB | 10.61 MiB/s, done.
+----- Downloading from https://huggingface.co/ydshieh/vit-gpt2-coco-en -----
+Cloning into 'ydshieh/vit-gpt2-coco-en'...
+remote: Enumerating objects: 74, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 74 (delta 3), reused 9 (delta 3), pack-reused 65
+Unpacking objects: 100% (74/74), 1.42 MiB | 4.94 MiB/s, done.
+Filtering content: 100% (4/4), 2.70 GiB | 10.50 MiB/s, done.
+----- Downloading from https://huggingface.co/dandelin/vilt-b32-finetuned-vqa -----
+Cloning into 'dandelin/vilt-b32-finetuned-vqa'...
+remote: Enumerating objects: 53, done.
+remote: Total 53 (delta 0), reused 0 (delta 0), pack-reused 53
+Unpacking objects: 100% (53/53), 546.26 KiB | 3.27 MiB/s, done.
+----- Downloading from https://huggingface.co/lambdalabs/sd-image-variations-diffusers -----
+Cloning into 'lambdalabs/sd-image-variations-diffusers'...
+remote: Enumerating objects: 98, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 98 (delta 0), reused 0 (delta 0), pack-reused 95
+Unpacking objects: 100% (98/98), 1.58 MiB | 5.89 MiB/s, done.
+Filtering content: 100% (4/4), 5.77 GiB | 10.31 MiB/s, done.
+----- Downloading from https://huggingface.co/facebook/maskformer-swin-base-coco -----
+Cloning into 'facebook/maskformer-swin-base-coco'...
+remote: Enumerating objects: 25, done.
+remote: Total 25 (delta 0), reused 0 (delta 0), pack-reused 25
+Unpacking objects: 100% (25/25), 7.09 KiB | 1.42 MiB/s, done.
+----- Downloading from https://huggingface.co/Intel/dpt-hybrid-midas -----
+Cloning into 'Intel/dpt-hybrid-midas'...
+remote: Enumerating objects: 37, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 37 (delta 0), reused 3 (delta 0), pack-reused 34
+Unpacking objects: 100% (37/37), 11.36 KiB | 447.00 KiB/s, done.
+----- Downloading from https://huggingface.co/datasets/Matthijs/cmu-arctic-xvectors -----
+Cloning into 'Matthijs/cmu-arctic-xvectors'...
+remote: Enumerating objects: 12, done.
+remote: Total 12 (delta 0), reused 0 (delta 0), pack-reused 12
+Unpacking objects: 100% (12/12), 2.38 KiB | 1.19 MiB/s, done.
+
+************************ ************************ Rerun download.sh to ensure all models are current ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server/models$ bash download.sh
+----- Downloading from https://huggingface.co/nlpconnect/vit-gpt2-image-captioning -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/ControlNet -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-canny -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-depth -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-hed -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-mlsd -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-openpose -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-scribble -----
+Already up to date.
+----- Downloading from https://huggingface.co/lllyasviel/sd-controlnet-seg -----
+Already up to date.
+----- Downloading from https://huggingface.co/runwayml/stable-diffusion-v1-5 -----
+Already up to date.
+----- Downloading from https://huggingface.co/damo-vilab/text-to-video-ms-1.7b -----
+Already up to date.
+----- Downloading from https://huggingface.co/microsoft/speecht5_asr -----
+Already up to date.
+----- Downloading from https://huggingface.co/JorisCos/DCCRNet_Libri1Mix_enhsingle_16k -----
+Already up to date.
+----- Downloading from https://huggingface.co/espnet/kan-bayashi_ljspeech_vits -----
+Already up to date.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-101 -----
+Already up to date.
+----- Downloading from https://huggingface.co/microsoft/speecht5_hifigan -----
+Already up to date.
+----- Downloading from https://huggingface.co/microsoft/speecht5_vc -----
+Already up to date.
+----- Downloading from https://huggingface.co/openai/whisper-base -----
+Already up to date.
+----- Downloading from https://huggingface.co/Intel/dpt-large -----
+Already up to date.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50-panoptic -----
+Already up to date.
+----- Downloading from https://huggingface.co/facebook/detr-resnet-50 -----
+Already up to date.
+----- Downloading from https://huggingface.co/google/owlvit-base-patch32 -----
+Already up to date.
+----- Downloading from https://huggingface.co/impira/layoutlm-document-qa -----
+Already up to date.
+----- Downloading from https://huggingface.co/ydshieh/vit-gpt2-coco-en -----
+Already up to date.
+----- Downloading from https://huggingface.co/dandelin/vilt-b32-finetuned-vqa -----
+Already up to date.
+----- Downloading from https://huggingface.co/lambdalabs/sd-image-variations-diffusers -----
+Already up to date.
+----- Downloading from https://huggingface.co/facebook/maskformer-swin-base-coco -----
+Already up to date.
+----- Downloading from https://huggingface.co/Intel/dpt-hybrid-midas -----
+Already up to date.
+----- Downloading from https://huggingface.co/datasets/Matthijs/cmu-arctic-xvectors -----
+Already up to date.
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server/models$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc        738G  284G  421G  41% /
+rootfs          7.8G  1.9M  7.8G   1% /init
+none            7.8G     0  7.8G   0% /dev
+none            7.8G     0  7.8G   0% /dev/shm
+none            7.8G  4.0K  7.8G   1% /run
+none            7.8G     0  7.8G   0% /run/lock
+none            7.8G     0  7.8G   0% /run/user
+none            466G  341G  125G  74% /usr/lib/wsl/drivers
+none            7.8G     0  7.8G   0% /usr/lib/wsl/lib
+none            7.8G  4.0K  7.8G   1% /mnt/wsl
+none            7.8G   76K  7.8G   1% /mnt/wslg
+none            7.8G   76K  7.8G   1% /mnt/wslg/versions.txt
+none            7.8G   76K  7.8G   1% /mnt/wslg/doc
+drvfs           466G  341G  125G  74% /mnt/c
+drvfs           932G  286G  647G  31% /mnt/d
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server/models$cd ..
+(base) harold@Strix:/home/JARVIS/server/$python models_server.py --config config.yaml 
+(base) harold@Strix:/home/JARVIS/server/$python awesome_chat.py --config config.yaml --mode server 
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server$ python models_server.py --config config.yaml
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/harold/nltk_data...
+[nltk_data]   Unzipping taggers/averaged_perceptron_tagger.zip.
+[nltk_data] Downloading package cmudict to /home/harold/nltk_data...
+[nltk_data]   Unzipping corpora/cmudict.zip.
+Downloading pytorch_model.bin: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 16.4M/16.4M [00:01<00:00, 9.24MB/s]
+Downloading (…)43880/.gitattributes: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.18k/1.18k [00:00<00:00, 724kB/s]
+Downloading (…)no_space/config.yaml: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7.99k/7.99k [00:00<00:00, 9.14MB/s]
+Downloading (…)e7b9043880/README.md: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.91k/1.91k [00:00<00:00, 3.80MB/s]
+Downloading (…)scriminator_loss.png: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 59.9k/59.9k [00:00<00:00, 998kB/s]
+Downloading (…)or_backward_time.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 64.5k/64.5k [00:00<00:00, 1.03MB/s]
+Downloading (…)tor_forward_time.png: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 66.2k/66.2k [00:00<00:00, 989kB/s]
+Downloading (…)_optim_step_time.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 69.2k/69.2k [00:00<00:00, 1.06MB/s]
+Downloading (…)inator_fake_loss.png: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 56.3k/56.3k [00:00<00:00, 737kB/s]
+Downloading (…)nerator_adv_loss.png: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 54.2k/54.2k [00:00<00:00, 931kB/s]
+Downloading (…)nator_train_time.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 66.3k/66.3k [00:00<00:00, 1.02MB/s]
+Downloading (…)inator_real_loss.png: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 59.4k/59.4k [00:00<00:00, 682kB/s]
+Downloading (…)enerator_kl_loss.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 24.0k/24.0k [00:00<00:00, 2.34MB/s]
+Downloading (…)_feat_match_loss.png: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 39.9k/39.9k [00:00<00:00, 792kB/s]
+Downloading (…)nerator_dur_loss.png: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 39.9k/39.9k [00:00<00:00, 894kB/s]
+Downloading (…)tor_forward_time.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 53.8k/53.8k [00:00<00:00, 1.04MB/s]
+Downloading (…)or_backward_time.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 65.4k/65.4k [00:00<00:00, 1.08MB/s]
+Downloading (…)images/iter_time.png: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 23.0k/23.0k [00:00<00:00, 947kB/s]
+Downloading (…)s/generator_loss.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 34.2k/34.2k [00:00<00:00, 1.37MB/s]
+Downloading (…)nerator_mel_loss.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 32.5k/32.5k [00:00<00:00, 1.66MB/s]
+Downloading (…)ax_cached_mem_GB.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 32.1k/32.1k [00:00<00:00, 37.3MB/s]
+Downloading (…)mages/optim0_lr0.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25.2k/25.2k [00:00<00:00, 2.47MB/s]
+Downloading (…)mages/optim1_lr0.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25.0k/25.0k [00:00<00:00, 3.07MB/s]
+Downloading (…)_optim_step_time.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 65.7k/65.7k [00:00<00:00, 1.33MB/s]
+Downloading (…)rator_train_time.png: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 68.2k/68.2k [00:00<00:00, 712kB/s]
+Downloading (…)e7b9043880/meta.yaml: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 320/320 [00:00<00:00, 321kB/s]
+Downloading (…)mages/train_time.png: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 31.7k/31.7k [00:00<00:00, 2.65MB/s]
+Downloading (…)count.ave_10best.pth: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 373M/373M [00:36<00:00, 10.3MB/s]
+Fetching 27 files: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 27/27 [00:38<00:00,  1.42s/it]
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+Downloading and preparing dataset cmu-arctic-xvectors/default to /home/harold/.cache/huggingface/datasets/cmu-arctic-xvectors/default/0.0.1/a62fea1f9415e240301ea0042ffad2a3aadf4d1caa7f9a8d9512d631723e781f...
+Downloading data: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 17.9M/17.9M [00:01<00:00, 9.52MB/s]
+Dataset cmu-arctic-xvectors downloaded and prepared to /home/harold/.cache/huggingface/datasets/cmu-arctic-xvectors/default/0.0.1/a62fea1f9415e240301ea0042ffad2a3aadf4d1caa7f9a8d9512d631723e781f. Subsequent calls will reuse this data.
+Killed
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+(base) harold@Strix:/home/JARVIS/server$ python awesome_chat.py --config config.yaml --mode server
+
+************************ ************************ ************************ ************************ ************************ ************************
+
+# Open a new terminal, while the other is still running awesome_chat.py and run the web version from web folder
+
+cd ..
+cd web
+npm install
+npm run dev
